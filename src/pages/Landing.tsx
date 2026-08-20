@@ -437,9 +437,13 @@ const BrandMIX = {
                   { step: "03", label: "Design", active: true },
                   { step: "04", label: "Develop", active: false },
                   { step: "05", label: "Launch", active: false },
-                ].map((s) => (
-                  <div
+                ].map((s, si) => (
+                  <motion.div
                     key={s.step}
+                    initial={{ opacity: 0, x: -12 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: si * 0.08, duration: 0.35 }}
                     className="flex items-center gap-3 border-2 border-miix-coffee/20 bg-miix-milk px-4 py-2.5"
                   >
                     <span
@@ -460,7 +464,7 @@ const BrandMIX = {
                         ● ACTIVE
                       </span>
                     )}
-                  </div>
+                  </motion.div>
                 ))}
               </div>
             </motion.div>
@@ -479,29 +483,53 @@ const BrandMIX = {
                 แต่คือการจัดระเบียบให้ลำดับการอ่านชัดเจน
               </p>
               <div className="grid grid-cols-3 gap-2">
-                <div className="col-span-2 border-2 border-miix-coffee bg-miix-coffee p-4">
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4 }}
+                  className="col-span-2 border-2 border-miix-coffee bg-miix-coffee p-4"
+                >
                   <p className="miix-font-mono text-[10px] text-miix-cyan">
                     PRIMARY
                   </p>
                   <p className="mt-1 text-sm font-bold uppercase">
                     Hierarchy Matters
                   </p>
-                </div>
-                <div className="border-2 border-miix-coffee/30 bg-miix-milk p-4">
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.08, duration: 0.4 }}
+                  className="border-2 border-miix-coffee/30 bg-miix-milk p-4"
+                >
                   <p className="miix-font-mono text-[10px] text-miix-coffee/40">
                     SECONDARY
                   </p>
-                </div>
-                <div className="border-2 border-miix-coffee/30 bg-miix-milk p-4">
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.16, duration: 0.4 }}
+                  className="border-2 border-miix-coffee/30 bg-miix-milk p-4"
+                >
                   <p className="miix-font-mono text-[10px] text-miix-coffee/40">
                     TERTIARY
                   </p>
-                </div>
-                <div className="col-span-2 border-2 border-miix-coffee/20 bg-miix-oat p-4">
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.24, duration: 0.4 }}
+                  className="col-span-2 border-2 border-miix-coffee/20 bg-miix-oat p-4"
+                >
                   <p className="miix-font-mono text-[10px] text-miix-coffee/40">
                     SUPPORTING
                   </p>
-                </div>
+                </motion.div>
               </div>
             </motion.div>
 
@@ -520,15 +548,19 @@ const BrandMIX = {
               </p>
               <div className="flex items-end gap-2">
                 {[40, 65, 50, 80, 70, 55, 90, 60, 75, 85].map((h, i) => (
-                  <div
+                  <motion.div
                     key={i}
-                    className="flex-1 border-2 border-miix-coffee"
+                    initial={{ scaleY: 0 }}
+                    whileInView={{ scaleY: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.1 + i * 0.06, duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] }}
+                    className="flex-1 border-2 border-miix-coffee origin-bottom"
                     style={{ height: `${h * 0.4}px` }}
                   >
                     <div
                       className={`h-full ${i % 3 === 0 ? "bg-miix-cyan" : i % 3 === 1 ? "bg-miix-coffee" : "bg-miix-matcha"}`}
                     />
-                  </div>
+                  </motion.div>
                 ))}
               </div>
               <p className="miix-font-mono mt-2 text-[10px] text-miix-coffee/40">
@@ -728,7 +760,12 @@ const BrandMIX = {
       {/* ─── FOOTER ─── */}
       <footer className="bg-miix-coffee text-miix-milk">
         <div className="mx-auto max-w-7xl px-6 py-8">
-          <div className="flex flex-col items-center justify-between gap-4 border-t border-miix-milk/20 pt-8 sm:flex-row">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="flex flex-col items-center justify-between gap-4 border-t border-miix-milk/20 pt-8 sm:flex-row">
             <div className="flex items-center gap-3">
               <div className="flex h-6 w-6 items-center justify-center border border-miix-cyan">
                 <span className="text-[8px] font-bold text-miix-cyan miix-font-mono">
@@ -747,7 +784,7 @@ const BrandMIX = {
                 © 2026
               </span>
             </div>
-          </div>
+          </motion.div>
         </div>
       </footer>
     </motion.div>
