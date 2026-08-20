@@ -139,6 +139,10 @@
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 60px;
+  }
   * {
     @apply border-border outline-ring/50;
   }
@@ -148,6 +152,9 @@
   button:not([disabled]),
   [role="button"]:not([disabled]) {
     cursor: pointer;
+  }
+  section[id] {
+    scroll-margin-top: 60px;
   }
 }
 

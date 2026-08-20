@@ -107,8 +107,20 @@ export default function Landing() {
               Miix Studio
             </span>
           </div>
-          <div className="hidden items-center gap-6 sm:flex">
-            <span className="miix-font-mono text-xs text-miix-coffee/50">
+          <div className="hidden items-center gap-5 sm:flex">
+            <a href="#identity" className="miix-font-mono text-[11px] font-bold uppercase tracking-wider text-miix-coffee/50 transition-colors hover:text-miix-cyan">
+              Identity
+            </a>
+            <a href="#philosophy" className="miix-font-mono text-[11px] font-bold uppercase tracking-wider text-miix-coffee/50 transition-colors hover:text-miix-cyan">
+              Philosophy
+            </a>
+            <a href="#visual" className="miix-font-mono text-[11px] font-bold uppercase tracking-wider text-miix-coffee/50 transition-colors hover:text-miix-cyan">
+              Visual
+            </a>
+            <a href="#colors" className="miix-font-mono text-[11px] font-bold uppercase tracking-wider text-miix-coffee/50 transition-colors hover:text-miix-cyan">
+              Colors
+            </a>
+            <span className="miix-font-mono text-[10px] text-miix-coffee/30">
               v1.0.0
             </span>
             <button
@@ -240,7 +252,7 @@ export default function Landing() {
 
       {/* ─── WHAT IS MIIX ─── */}
       <section className="border-b-2 border-miix-coffee bg-miix-oat">
-        <div className="mx-auto max-w-7xl px-6 py-20 md:py-28">
+        <div id="identity" className="mx-auto max-w-7xl px-6 py-20 md:py-28">
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
             <motion.div {...fadeUp}>
               <div className="mb-6 inline-flex items-center gap-2 border-2 border-miix-coffee bg-miix-milk px-3 py-1.5">
@@ -356,7 +368,7 @@ const BrandMIX = {
       </section>
 
       {/* ─── VISUAL LANGUAGE ─── */}
-      <section className="border-b-2 border-miix-coffee bg-miix-milk miix-grid-bg-strong">
+      <section id="visual" className="border-b-2 border-miix-coffee bg-miix-milk miix-grid-bg-strong">
         <div className="mx-auto max-w-7xl px-6 py-20 md:py-28">
           <motion.div {...fadeUp} className="mb-16">
             <div className="mb-6 inline-flex items-center gap-2 border-2 border-miix-coffee bg-miix-oat px-3 py-1.5">
@@ -528,7 +540,7 @@ const BrandMIX = {
       </section>
 
       {/* ─── COLOR DNA ─── */}
-      <section className="border-b-2 border-miix-coffee bg-miix-coffee text-miix-milk">
+      <section id="colors" className="border-b-2 border-miix-coffee bg-miix-coffee text-miix-milk">
         <div className="mx-auto max-w-7xl px-6 py-20 md:py-28">
           <motion.div {...fadeUp} className="mb-16">
             <div className="mb-6 inline-flex items-center gap-2 border-2 border-miix-cyan bg-transparent px-3 py-1.5">
