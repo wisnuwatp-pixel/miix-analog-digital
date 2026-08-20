@@ -4,17 +4,22 @@ import { useAuth } from "@/hooks/use-auth";
 import {
   Terminal,
   LogOut,
-  MessageSquare,
   Upload,
   Heart,
   Send,
   Image,
-  FileText,
-  BarChart3,
-  Activity,
-  Users,
   Settings,
+  BarChart3,
+  MessageSquare,
 } from "lucide-react";
+import {
+  ProgressBarIcon,
+  RunningManIcon,
+  FolderIcon,
+  ChatBubbleIcon,
+  FloppyIcon,
+  CDDiscIcon,
+} from "@/components/Y2KIcons";
 import { useState } from "react";
 import { useNavigate } from "react-router";
 
@@ -122,20 +127,20 @@ export default function Dashboard() {
         {/* Status Grid */}
         <div className="mb-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {[
-            { icon: Activity, label: "Status", value: "Active", color: "bg-miix-cyan" },
-            { icon: Users, label: "Followers", value: "128", color: "bg-miix-matcha" },
-            { icon: FileText, label: "Posts", value: "23", color: "bg-miix-honey" },
-            { icon: MessageSquare, label: "Messages", value: "7", color: "bg-miix-terracotta" },
+            { icon: ProgressBarIcon, label: "Status", value: "Active", color: "bg-miix-cyan" },
+            { icon: RunningManIcon, label: "Followers", value: "128", color: "bg-miix-matcha" },
+            { icon: FolderIcon, label: "Posts", value: "23", color: "bg-miix-honey" },
+            { icon: ChatBubbleIcon, label: "Messages", value: "7", color: "bg-miix-terracotta" },
           ].map((card) => (
             <div
               key={card.label}
-              className="rounded-lg border border-miix-cyan/8 bg-miix-oat/60 p-5"
+              className="rounded-lg border border-miix-cyan/8 bg-miix-oat/60 p-5 transition-all hover:border-miix-cyan/20 hover:shadow-[0_0_15px_#00dbc210]"
             >
               <div className="mb-3 flex items-center gap-2">
                 <div
-                  className={`flex h-6 w-6 items-center justify-center rounded-sm ${card.color}`}
+                  className={`flex h-8 w-8 items-center justify-center rounded-md ${card.color}`}
                 >
-                  <card.icon className="h-3 w-3 text-miix-cream" />
+                  <card.icon size={18} />
                 </div>
                 <span className="miix-font-mono text-[10px] font-bold uppercase tracking-wider text-miix-milk/30">
                   {card.label}
@@ -266,15 +271,15 @@ export default function Dashboard() {
                 </h3>
                 <div className="space-y-2">
                   <button className="flex w-full items-center gap-3 rounded-md border border-miix-cyan/8 bg-miix-cyan/3 px-4 py-3 text-left text-xs font-bold uppercase tracking-wider text-miix-milk/50 transition-all hover:bg-miix-cyan/10 hover:text-miix-cyan">
-                    <Upload className="h-4 w-4" />
+                    <FloppyIcon size={16} />
                     Create New Post
                   </button>
                   <button className="flex w-full items-center gap-3 rounded-md border border-miix-cyan/8 bg-miix-cyan/3 px-4 py-3 text-left text-xs font-bold uppercase tracking-wider text-miix-milk/50 transition-all hover:bg-miix-cyan/10 hover:text-miix-cyan">
-                    <MessageSquare className="h-4 w-4" />
+                    <ChatBubbleIcon size={16} />
                     Send Message
                   </button>
                   <button className="flex w-full items-center gap-3 rounded-md border border-miix-cyan/8 bg-miix-cyan/3 px-4 py-3 text-left text-xs font-bold uppercase tracking-wider text-miix-milk/50 transition-all hover:bg-miix-cyan/10 hover:text-miix-cyan">
-                    <Settings className="h-4 w-4" />
+                    <CDDiscIcon size={16} />
                     Settings
                   </button>
                 </div>
