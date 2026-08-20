@@ -14,6 +14,24 @@ import {
   Upload,
   LayoutDashboard,
 } from "lucide-react";
+import {
+  FloppyIcon,
+  HourglassIcon,
+  CRTIcon,
+  BrowserIcon,
+  RSSIcon,
+  GlobeIcon,
+  LockIcon,
+  ChatBubbleIcon,
+  FolderIcon,
+  CDDiscIcon,
+  PixelStarIcon,
+  ProgressBarIcon,
+  RunningManIcon,
+  ButterflyIcon,
+  HappyMacIcon,
+  WindowsFlagIcon,
+} from "@/components/Y2KIcons";
 import { useNavigate } from "react-router";
 
 const fadeUp = {
@@ -138,6 +156,9 @@ export default function Landing() {
             </a>
             <a href="#platform" className="miix-font-mono text-[11px] font-bold uppercase tracking-wider text-miix-milk/40 transition-colors hover:text-miix-cyan">
               Platform
+            </a>
+            <a href="#heritage" className="miix-font-mono text-[11px] font-bold uppercase tracking-wider text-miix-milk/40 transition-colors hover:text-miix-honey">
+              Heritage
             </a>
             <a href="#colors" className="miix-font-mono text-[11px] font-bold uppercase tracking-wider text-miix-milk/40 transition-colors hover:text-miix-cyan">
               Colors
@@ -641,6 +662,94 @@ const BrandMIX = {
         </div>
       </section>
 
+      {/* ─── DIGITAL HERITAGE (Y2K Icons) ─── */}
+      <section id="heritage" className="border-b border-miix-cyan/5 miix-grad-dark miix-grid-bg">
+        <div className="mx-auto max-w-7xl px-6 py-20 md:py-28">
+          <motion.div {...fadeUp} className="mb-16">
+            <div className="mb-6 inline-flex items-center gap-2 rounded-md border border-miix-honey/20 bg-miix-honey/5 px-3 py-1.5">
+              <FloppyIcon size={14} className="text-miix-honey" />
+              <span className="miix-font-mono text-xs font-medium uppercase tracking-wider text-miix-honey">
+                05 / Digital Heritage
+              </span>
+            </div>
+            <h2 className="text-4xl font-black uppercase leading-tight tracking-tight md:text-5xl">
+              Icons of the<br />
+              <span className="text-miix-honey">Transition</span>
+            </h2>
+            <p className="mt-4 max-w-xl text-sm leading-relaxed text-miix-milk/40">
+              ยุค 1999–2005 คือช่วงเวลาแห่งการเปลี่ยนผ่าน — จาก CRT สู่ Flat Screen,
+              จาก Floppy Disk สู่ USB, จาก Dial-up สู่ Broadband
+              ไอคอนเหล่านี้คือสัญลักษณ์ของยุคที่ Analog พบกับ Digital
+            </p>
+          </motion.div>
+
+          {/* Icon Grid */}
+          <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-5">
+            {[
+              { icon: FloppyIcon, name: "Floppy Disk", year: "1971–2010", desc: "สัญลักษณ์สากลของ Save" },
+              { icon: HourglassIcon, name: "Hourglass", year: "1981–2007", desc: " cursors ที่ทุกคนรอคอย" },
+              { icon: CRTIcon, name: "CRT Monitor", year: "1970–2005", desc: "จอภาพของยุคเริ่มต้น" },
+              { icon: BrowserIcon, name: "Browser", year: "1993–", desc: "ประตูสู่ World Wide Web" },
+              { icon: RSSIcon, name: "RSS Feed", year: "1999–", desc: "การป้อนข่าวสารยุคแรก" },
+              { icon: GlobeIcon, name: "WWW Globe", year: "1990–", desc: "สัญลักษณ์ของอินเทอร์เน็ต" },
+              { icon: LockIcon, name: "Security Lock", year: "1990s–", desc: "ยุคเริ่มต้นของ Web Security" },
+              { icon: ChatBubbleIcon, name: "IM Chat", year: "1996–", desc: "AIM, ICQ, MSN Messenger" },
+              { icon: FolderIcon, name: "Manila Folder", year: "1984–", desc: "ระบบจัดไฟล์ดิจิทัล" },
+              { icon: CDDiscIcon, name: "CD-ROM", year: "1985–2010", desc: "สื่อบันทึกข้อมูลสุดคลาสสิก" },
+              { icon: PixelStarIcon, name: "Pixel Star", year: "1990s–", desc: "ระบบให้คะแนนยุคแรก" },
+              { icon: ProgressBarIcon, name: "Progress Bar", year: "1980s–", desc: "สถานะการโหลดแบบ Chunky" },
+              { icon: RunningManIcon, name: "MSN Man", year: "1999–2013", desc: "สัญลักษณ์ status ของ MSN" },
+              { icon: ButterflyIcon, name: "MSN Butterfly", year: "1999–2013", desc: "ไอคอน MSN Messenger" },
+              { icon: HappyMacIcon, name: "Happy Mac", year: "1984–2001", desc: "หน้าจอ Boot ของ Macintosh" },
+              { icon: WindowsFlagIcon, name: "Windows Flag", year: "1990–", desc: "สัญลักษณ์ Windows XP Luna" },
+            ].map((item, i) => (
+              <motion.div
+                key={item.name}
+                {...stagger}
+                transition={{ delay: i * 0.04, duration: 0.35 }}
+                className="group rounded-lg border border-miix-honey/8 bg-miix-honey/3 p-5 transition-all hover:border-miix-honey/25 hover:bg-miix-honey/5"
+              >
+                <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-lg border border-miix-honey/10 bg-miix-honey/5 transition-all group-hover:border-miix-honey/20 group-hover:bg-miix-honey/10 group-hover:shadow-[0_0_15px_#d4a84320]">
+                  <item.icon size={28} />
+                </div>
+                <h4 className="mb-0.5 text-xs font-bold uppercase tracking-wider text-miix-milk/80">
+                  {item.name}
+                </h4>
+                <p className="miix-font-mono text-[9px] text-miix-honey/50">
+                  {item.year}
+                </p>
+                <p className="mt-1 text-[10px] leading-relaxed text-miix-milk/30">
+                  {item.desc}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Timeline strip */}
+          <motion.div
+            {...fadeUp}
+            className="mt-12 rounded-lg border border-miix-honey/8 bg-miix-honey/3 p-6"
+          >
+            <div className="flex items-center gap-1 overflow-x-auto pb-2">
+              {["1999", "2000", "2001", "2002", "2003", "2004", "2005"].map((year, i) => (
+                <div key={year} className="flex flex-1 flex-col items-center gap-2">
+                  <span className="miix-font-mono text-[10px] font-bold text-miix-honey/50">
+                    {year}
+                  </span>
+                  <div className={`h-1 w-full rounded-full ${i === 2 ? "bg-miix-cyan" : i < 2 ? "bg-miix-honey/20" : "bg-miix-honey/10"}`} />
+                  {i === 2 && (
+                    <span className="text-[8px] text-miix-cyan">Mac OS X</span>
+                  )}
+                  {i === 3 && (
+                    <span className="text-[8px] text-miix-honey/40">XP SP1</span>
+                  )}
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* ─── COLOR DNA ─── */}
       <section id="colors" className="border-b border-miix-cyan/5 miix-grad-dark text-miix-milk">
         <div className="mx-auto max-w-7xl px-6 py-20 md:py-28">
@@ -648,7 +757,7 @@ const BrandMIX = {
             <div className="mb-6 inline-flex items-center gap-2 rounded-md border border-miix-cyan/20 bg-miix-cyan/10 px-3 py-1.5">
               <Leaf className="h-3.5 w-3.5 text-miix-cyan" />
               <span className="miix-font-mono text-xs font-medium uppercase tracking-wider text-miix-cyan">
-                05 / Color DNA
+                06 / Color DNA
               </span>
             </div>
             <h2 className="text-4xl font-black uppercase leading-tight tracking-tight md:text-5xl">
@@ -700,7 +809,7 @@ const BrandMIX = {
             <div className="mb-6 inline-flex items-center gap-2 rounded-md border border-miix-cyan/15 bg-miix-cyan/5 px-3 py-1.5">
               <Eye className="h-3.5 w-3.5 text-miix-cyan" />
               <span className="miix-font-mono text-xs font-medium uppercase tracking-wider text-miix-cyan">
-                06 / Boundaries
+                07 / Boundaries
               </span>
             </div>
             <h2 className="text-4xl font-black uppercase leading-tight tracking-tight md:text-5xl">
@@ -742,7 +851,7 @@ const BrandMIX = {
             <div className="mb-6 inline-flex items-center gap-2 rounded-md border border-miix-cyan/15 bg-miix-cyan/5 px-3 py-1.5">
               <Zap className="h-3.5 w-3.5 text-miix-cyan" />
               <span className="miix-font-mono text-xs font-medium uppercase tracking-wider text-miix-cyan">
-                07 / UX
+                08 / UX
               </span>
             </div>
             <h2 className="text-4xl font-black uppercase leading-tight tracking-tight md:text-5xl">
