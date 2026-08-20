@@ -22,10 +22,10 @@ export default function Dashboard() {
   return (
     <main className="min-h-screen bg-miix-milk text-miix-coffee">
       {/* Top Bar */}
-      <nav className="border-b-2 border-miix-coffee bg-miix-oat">
+      <nav className="border-b-2 border-miix-coffee/15 miix-grad-warm backdrop-blur-sm">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3">
           <div className="flex items-center gap-3">
-            <div className="flex h-7 w-7 items-center justify-center border-2 border-miix-coffee bg-miix-coffee">
+            <div className="flex h-7 w-7 items-center justify-center rounded-md border-2 border-miix-coffee bg-miix-coffee">
               <span className="text-[10px] font-bold text-miix-milk miix-font-mono">
                 M
               </span>
@@ -44,7 +44,7 @@ export default function Dashboard() {
             <Button
               type="button"
               variant="outline"
-              className="cursor-pointer gap-2 border-2 border-miix-coffee bg-transparent text-xs font-bold uppercase tracking-wider hover:bg-miix-cyan hover:text-miix-coffee hover:border-miix-cyan"
+              className="cursor-pointer gap-2 rounded-md border-2 border-miix-coffee/30 bg-transparent text-xs font-bold uppercase tracking-wider hover:bg-miix-cyan hover:text-miix-coffee hover:border-miix-cyan"
               onClick={handleSignOut}
             >
               <LogOut className="size-3.5" />
@@ -54,10 +54,10 @@ export default function Dashboard() {
         </div>
       </nav>
 
-      <div className="mx-auto max-w-7xl px-6 py-10">
+      <div className="mx-auto max-w-7xl px-6 py-10 miix-grid-bg">
         {/* Welcome Header */}
         <div className="mb-8">
-          <div className="mb-3 inline-flex items-center gap-2 border-2 border-miix-coffee bg-miix-oat px-3 py-1.5">
+          <div className="mb-3 inline-flex items-center gap-2 rounded-md border-2 border-miix-coffee/20 bg-miix-oat/80 px-3 py-1.5 backdrop-blur-sm">
             <Terminal className="h-3.5 w-3.5" />
             <span className="miix-font-mono text-xs font-medium uppercase tracking-wider">
               System authenticated
@@ -102,7 +102,7 @@ export default function Dashboard() {
           ].map((card) => (
             <div
               key={card.label}
-              className="border-2 border-miix-coffee bg-miix-oat p-5"
+              className="rounded-lg border-2 border-miix-coffee/15 bg-miix-oat/60 p-5 backdrop-blur-sm"
             >
               <div className="mb-3 flex items-center gap-2">
                 <div
@@ -122,8 +122,8 @@ export default function Dashboard() {
         </div>
 
         {/* Workspace Card */}
-        <div className="border-2 border-miix-coffee bg-miix-oat p-8">
-          <div className="mb-6 flex items-center gap-3 border-b-2 border-miix-coffee/20 pb-4">
+        <div className="rounded-lg border-2 border-miix-coffee/15 bg-miix-oat/60 p-8 backdrop-blur-sm">
+          <div className="mb-6 flex items-center gap-3 border-b-2 border-miix-coffee/10 pb-4">
             <Terminal className="h-4 w-4 text-miix-cyan" />
             <span className="miix-font-mono text-xs font-bold uppercase tracking-wider">
               Workspace

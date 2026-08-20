@@ -42,100 +42,106 @@
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
-/* Miix Studio — Brand Theme */
+/* Miix Studio — Brand Theme v2 */
 :root {
-  /* Neobrutalism: zero radius for square corners */
-  --radius: 0px;
+  /* Softened Neobrutalism: 6px radius — bold but not harsh */
+  --radius: 6px;
 
-  /* Base: Coffee & Cocoa dark tones */
-  --background: #f5f0e8;
-  --foreground: #2c1a0e;
+  /* Base: Warm linen with subtle depth */
+  --background: #f7f1e7;
+  --foreground: #2a1810;
 
-  /* Cards: Oat / Cream */
-  --card: #ede6d6;
-  --card-foreground: #2c1a0e;
-  --popover: #ede6d6;
-  --popover-foreground: #2c1a0e;
+  /* Cards: Warm cream */
+  --card: #f0e8d8;
+  --card-foreground: #2a1810;
+  --popover: #f0e8d8;
+  --popover-foreground: #2a1810;
 
-  /* Primary: Cocoa Dark */
-  --primary: #2c1a0e;
-  --primary-foreground: #f5f0e8;
+  /* Primary: Rich espresso */
+  --primary: #2a1810;
+  --primary-foreground: #f7f1e7;
 
-  /* Secondary: Matcha / Tea */
-  --secondary: #a8c5a0;
-  --secondary-foreground: #2c1a0e;
+  /* Secondary: Sage green */
+  --secondary: #96b88c;
+  --secondary-foreground: #2a1810;
 
-  /* Muted: Oat Milk */
-  --muted: #e8dfd0;
-  --muted-foreground: #6b5a4e;
+  /* Muted: Warm sand */
+  --muted: #e6dbc8;
+  --muted-foreground: #7a6958;
 
-  /* Accent: Digital Cyan */
-  --accent: #00e5cc;
+  /* Accent: Vibrant teal */
+  --accent: #00dbc2;
   --accent-foreground: #1a1a1a;
 
   --destructive: #c0392b;
-  --border: #2c1a0e;
-  --input: #e0d8ca;
-  --ring: #00e5cc;
+  --border: #3d2b1c;
+  --input: #e2d8c8;
+  --ring: #00dbc2;
 
-  --chart-1: #2c1a0e;
-  --chart-2: #00e5cc;
-  --chart-3: #a8c5a0;
-  --chart-4: #c4a882;
-  --chart-5: #8b6f47;
+  --chart-1: #2a1810;
+  --chart-2: #00dbc2;
+  --chart-3: #96b88c;
+  --chart-4: #c9a87c;
+  --chart-5: #8a6d42;
 
-  --sidebar: #ede6d6;
-  --sidebar-foreground: #2c1a0e;
-  --sidebar-primary: #2c1a0e;
-  --sidebar-primary-foreground: #f5f0e8;
-  --sidebar-accent: #00e5cc;
+  --sidebar: #f0e8d8;
+  --sidebar-foreground: #2a1810;
+  --sidebar-primary: #2a1810;
+  --sidebar-primary-foreground: #f7f1e7;
+  --sidebar-accent: #00dbc2;
   --sidebar-accent-foreground: #1a1a1a;
-  --sidebar-border: #2c1a0e;
-  --sidebar-ring: #00e5cc;
+  --sidebar-border: #3d2b1c;
+  --sidebar-ring: #00dbc2;
 
-  /* Miix Brand Tokens */
-  --miix-coffee: #2c1a0e;
+  /* Miix Brand Tokens — Extended palette */
+  --miix-coffee: #2a1810;
   --miix-cocoa: #4a3428;
-  --miix-matcha: #a8c5a0;
-  --miix-tea: #c4a882;
-  --miix-milk: #f5f0e8;
-  --miix-oat: #ede6d6;
-  --miix-cyan: #00e5cc;
-  --miix-cyan-glow: #00e5cc33;
+  --miix-matcha: #96b88c;
+  --miix-sage: #7da872;
+  --miix-tea: #c9a87c;
+  --miix-honey: #d4a843;
+  --miix-terracotta: #c4734e;
+  --miix-milk: #f7f1e7;
+  --miix-oat: #f0e8d8;
+  --miix-cream: #faf6ef;
+  --miix-cyan: #00dbc2;
+  --miix-cyan-glow: #00dbc233;
+  --miix-cyan-deep: #00b8a1;
+  --miix-warm: #e8d5b8;
 }
 
 .dark {
   --background: #1a1210;
-  --foreground: #f5f0e8;
-  --card: #2c1a0e;
-  --card-foreground: #f5f0e8;
-  --popover: #2c1a0e;
-  --popover-foreground: #f5f0e8;
-  --primary: #f5f0e8;
+  --foreground: #f7f1e7;
+  --card: #2a1810;
+  --card-foreground: #f7f1e7;
+  --popover: #2a1810;
+  --popover-foreground: #f7f1e7;
+  --primary: #f7f1e7;
   --primary-foreground: #1a1210;
-  --secondary: #a8c5a0;
+  --secondary: #96b88c;
   --secondary-foreground: #1a1210;
   --muted: #3a2a1e;
-  --muted-foreground: #c4a882;
-  --accent: #00e5cc;
+  --muted-foreground: #c9a87c;
+  --accent: #00dbc2;
   --accent-foreground: #1a1210;
   --destructive: #e74c3c;
-  --border: #f5f0e833;
+  --border: #f7f1e733;
   --input: #3a2a1e;
-  --ring: #00e5cc;
-  --chart-1: #00e5cc;
-  --chart-2: #a8c5a0;
-  --chart-3: #c4a882;
-  --chart-4: #8b6f47;
-  --chart-5: #f5f0e8;
+  --ring: #00dbc2;
+  --chart-1: #00dbc2;
+  --chart-2: #96b88c;
+  --chart-3: #c9a87c;
+  --chart-4: #8a6d42;
+  --chart-5: #f7f1e7;
   --sidebar: #1a1210;
-  --sidebar-foreground: #f5f0e8;
-  --sidebar-primary: #00e5cc;
+  --sidebar-foreground: #f7f1e7;
+  --sidebar-primary: #00dbc2;
   --sidebar-primary-foreground: #1a1210;
-  --sidebar-accent: #2c1a0e;
-  --sidebar-accent-foreground: #f5f0e8;
-  --sidebar-border: #f5f0e833;
-  --sidebar-ring: #00e5cc;
+  --sidebar-accent: #2a1810;
+  --sidebar-accent-foreground: #f7f1e7;
+  --sidebar-border: #f7f1e733;
+  --sidebar-ring: #00dbc2;
 }
 
 @layer base {
@@ -158,7 +164,7 @@
   }
 }
 
-/* Miix Studio — Utility Classes */
+/* Miix Studio — Utility Classes v2 */
 @layer utilities {
   .miix-border {
     border: 2px solid var(--miix-coffee);
@@ -175,23 +181,42 @@
   .miix-shadow-cyan {
     box-shadow: 4px 4px 0px var(--miix-cyan);
   }
+  .miix-shadow-lg {
+    box-shadow: 6px 6px 0px var(--miix-coffee);
+  }
   .miix-glow {
     box-shadow: 0 0 20px var(--miix-cyan-glow), 0 0 40px var(--miix-cyan-glow);
   }
   .miix-font-mono {
     font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', 'JetBrains Mono', ui-monospace, monospace;
   }
+  /* Dot grid — more organic, less rigid */
   .miix-grid-bg {
-    background-image:
-      linear-gradient(rgba(44, 26, 14, 0.05) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(44, 26, 14, 0.05) 1px, transparent 1px);
-    background-size: 24px 24px;
+    background-image: radial-gradient(circle, rgba(42, 24, 16, 0.06) 1px, transparent 1px);
+    background-size: 20px 20px;
   }
   .miix-grid-bg-strong {
-    background-image:
-      linear-gradient(rgba(44, 26, 14, 0.08) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(44, 26, 14, 0.08) 1px, transparent 1px);
-    background-size: 24px 24px;
+    background-image: radial-gradient(circle, rgba(42, 24, 16, 0.09) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+  /* Gradient sections */
+  .miix-grad-hero {
+    background: linear-gradient(165deg, #f7f1e7 0%, #f0e8d8 40%, #e8d5b8 100%);
+  }
+  .miix-grad-warm {
+    background: linear-gradient(170deg, #f0e8d8 0%, #e6dbc8 100%);
+  }
+  .miix-grad-dark {
+    background: linear-gradient(170deg, #2a1810 0%, #3d2b1c 60%, #4a3428 100%);
+  }
+  .miix-grad-accent {
+    background: linear-gradient(135deg, #00dbc2 0%, #00b8a1 50%, #96b88c 100%);
+  }
+  .miix-grad-sage {
+    background: linear-gradient(160deg, #2a1810 0%, #2e3328 50%, #3a2a1e 100%);
+  }
+  .miix-grad-cyan-dark {
+    background: linear-gradient(160deg, #2a1810 0%, #1a2e2c 50%, #1a2a2a 100%);
   }
 }
 
