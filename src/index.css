@@ -205,6 +205,16 @@
   }
 }
 
+/* Font size scale — controlled by nav toggle */
+.miix-text-sm { font-size: 14px; }
+.miix-text-sm p, .miix-text-sm span, .miix-text-sm a, .miix-text-sm li, .miix-text-sm td, .miix-text-sm th, .miix-text-sm label, .miix-text-sm button { font-size: inherit; }
+
+.miix-text-md { font-size: 16px; }
+.miix-text-md p, .miix-text-md span, .miix-text-md a, .miix-text-md li, .miix-text-md td, .miix-text-md th, .miix-text-md label, .miix-text-md button { font-size: inherit; }
+
+.miix-text-lg { font-size: 18px; }
+.miix-text-lg p, .miix-text-lg span, .miix-text-lg a, .miix-text-lg li, .miix-text-lg td, .miix-text-lg th, .miix-text-lg label, .miix-text-lg button { font-size: inherit; }
+
 /* Custom scrollbar — dark */
 ::-webkit-scrollbar {
   width: 6px;

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
@@ -124,15 +125,23 @@ const timelineEvents = [
   { time: "100", label: "Launch", status: "Status: Live" },
 ];
 
+type FontSize = "sm" | "md" | "lg";
+const fontSizes: { key: FontSize; label: string }[] = [
+  { key: "sm", label: "S" },
+  { key: "md", label: "M" },
+  { key: "lg", label: "L" },
+];
+
 export default function Landing() {
   const navigate = useNavigate();
+  const [fontSize, setFontSize] = useState<FontSize>("md");
 
   return (
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.4 }}
-      className="min-h-screen text-miix-coffee"
+      className={`min-h-screen text-miix-coffee miix-text-${fontSize}`}
     >
       {/* ─── NAV ─── */}
       <nav className="fixed top-0 left-0 right-0 z-50 border-b border-miix-cyan/10 bg-miix-cream/90 backdrop-blur-xl">
@@ -163,6 +172,18 @@ export default function Landing() {
             <a href="#colors" className="miix-font-mono text-[11px] font-bold uppercase tracking-wider text-miix-milk/40 transition-colors hover:text-miix-cyan">
               Colors
             </a>
+            {/* Font size toggle */}
+            <div className="flex items-center gap-0.5 rounded-md border border-miix-cyan/20 bg-miix-cyan/5 p-0.5">
+              {fontSizes.map((fs) => (
+                <button
+                  key={fs.key}
+                  onClick={() => setFontSize(fs.key)}
+                  className={`miix-font-mono text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded-sm transition-all ${fontSize === fs.key ? "bg-miix-cyan text-miix-cream" : "text-miix-milk/30 hover:text-miix-cyan"}`}
+                >
+                  {fs.label}
+                </button>
+              ))}
+            </div>
             <button
               onClick={() => navigate("/auth")}
               className="rounded-md border border-miix-cyan/30 bg-miix-cyan/10 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-miix-cyan transition-all hover:bg-miix-cyan hover:text-miix-cream hover:border-miix-cyan"
@@ -911,29 +932,39 @@ const BrandMIX = {
         </div>
       </section>
 
-      {/* ─── CTA ─── */}
+      {/* ─── ABOUT ME ─── */}
       <section className="border-b border-miix-cyan/5 miix-grad-cyan-dark text-miix-milk relative overflow-hidden">
         {/* Decorative glows */}
         <div className="pointer-events-none absolute -bottom-20 -right-20 h-80 w-80 rounded-full bg-miix-cyan/8 blur-[120px]" />
         <div className="pointer-events-none absolute -top-20 -left-20 h-60 w-60 rounded-full bg-miix-honey/5 blur-[100px]" />
 
         <div className="relative mx-auto max-w-7xl px-6 py-20 md:py-28">
-          <motion.div {...fadeUp} className="text-center">
+          <motion.div {...fadeUp} className="mx-auto max-w-2xl text-center">
             <div className="mb-8 inline-flex items-center gap-2 rounded-md border border-miix-cyan/20 bg-miix-cyan/10 px-3 py-1.5">
-              <Monitor className="h-3.5 w-3.5 text-miix-cyan" />
               <span className="miix-font-mono text-xs font-medium uppercase tracking-wider text-miix-cyan">
-                System Ready
+                About Me
               </span>
             </div>
-            <h2 className="mb-6 text-4xl font-black uppercase leading-tight tracking-tight md:text-6xl">
-              Ready to
+            <h2 className="mb-6 text-4xl font-black uppercase leading-tight tracking-tight md:text-5xl">
+              The Person Behind
               <br />
-              <span className="text-miix-cyan">Mix</span>?
+              <span className="text-miix-cyan">the System</span>
             </h2>
-            <p className="mx-auto mb-10 max-w-lg text-sm leading-relaxed text-miix-milk/40">
-              เข้าร่วม Miix Analog Digital — ที่ซึ่งคุณสร้างเนื้อหา
-              เชื่อมต่อชุมชน และเป็นเจ้าของพื้นที่ดิจิทัลของตัวเอง
-            </p>
+            <div className="mb-10 space-y-4 text-sm leading-relaxed text-miix-milk/50">
+              <p>
+                ฉันคือคนที่เชื่อว่าทุกไอเดียดี ๆ ล้วนมีค่าเมื่อถูกผสมผสานอย่างถูกวิธี
+                จากโลก Analog ที่จับต้องได้ สู่โลก Digital ที่ไม่มีขีดจำกัด
+                — ฉันเลือกที่จะเป็นจุดเชื่อมระหว่างสองโลกนี้
+              </p>
+              <p>
+                Miix Analog Digital คือพื้นที่ของฉันในการพิสูจน์ว่า
+                <strong className="text-miix-milk"> เทคโนโลยีที่ดีไม่จำเป็นต้องซับซ้อน</strong>{" "}
+                — แค่ต้องถูกคิดมาอย่างถ่องแท้ ตั้งแต่ต้นจนจบ
+              </p>
+              <p className="miix-font-mono text-xs text-miix-cyan/60">
+                // Status: Building  &bull;  Mode: Analog × Digital  &bull;  Location: Thailand
+              </p>
+            </div>
             <button
               onClick={() => navigate("/auth?returnTo=/dashboard")}
               className="group inline-flex items-center gap-3 rounded-md border border-miix-cyan/40 bg-miix-cyan/10 px-10 py-5 text-sm font-bold uppercase tracking-wider text-miix-cyan backdrop-blur-sm transition-all hover:bg-miix-cyan hover:text-miix-cream hover:border-miix-cyan hover:shadow-[0_0_40px_#00dbc230]"
