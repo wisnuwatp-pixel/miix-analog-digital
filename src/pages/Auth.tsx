@@ -15,7 +15,8 @@ import {
 } from "@/components/ui/input-otp";
 
 import { useAuth } from "@/hooks/use-auth";
-import { ArrowRight, Loader2, Mail, UserX, Terminal } from "lucide-react";
+import { ArrowRight, Loader2 } from "lucide-react";
+import { LockIcon, RunningManIcon, CRTIcon } from "@/components/Y2KIcons";
 import { Suspense, useEffect, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router";
 
@@ -137,7 +138,7 @@ function Auth({ redirectAfterAuth }: AuthProps = {}) {
         <div className="w-full max-w-[400px]">
           {/* Terminal header */}
           <div className="mb-4 inline-flex items-center gap-2 rounded-md border border-miix-cyan/15 bg-miix-cyan/5 px-3 py-1.5">
-            <Terminal className="h-3.5 w-3.5 text-miix-cyan" />
+            <CRTIcon size={16} />
             <span className="miix-font-mono text-xs font-medium uppercase tracking-wider text-miix-cyan">
               Auth Terminal
             </span>
@@ -158,7 +159,7 @@ function Auth({ redirectAfterAuth }: AuthProps = {}) {
                   <CardContent>
                     <div className="relative flex items-center gap-2">
                       <div className="relative flex-1">
-                        <Mail className="absolute left-3 top-3 h-4 w-4 text-miix-milk/20" />
+                        <span className="absolute left-3 top-3"><LockIcon size={16} /></span>
                         <Input
                           name="email"
                           placeholder="name@example.com"
@@ -206,7 +207,7 @@ function Auth({ redirectAfterAuth }: AuthProps = {}) {
                         onClick={handleGuestLogin}
                         disabled={isLoading}
                       >
-                        <UserX className="mr-2 h-4 w-4" />
+                        <RunningManIcon size={16} className="mr-2" />
                         Continue as Guest
                       </Button>
                     </div>
