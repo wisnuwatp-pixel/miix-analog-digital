@@ -10,6 +10,9 @@ import {
   Coffee,
   Leaf,
   Monitor,
+  MessageSquare,
+  Upload,
+  LayoutDashboard,
 } from "lucide-react";
 import { useNavigate } from "react-router";
 
@@ -68,14 +71,32 @@ const whatWeAreNot = [
 ];
 
 const colorDna = [
-  { name: "Coffee", hex: "#2a1810", category: "Dark", accent: "#3d2b1c" },
-  { name: "Cocoa", hex: "#4a3428", category: "Dark", accent: "#5c4435" },
-  { name: "Matcha", hex: "#96b88c", category: "Creamy", accent: "#7da872" },
-  { name: "Tea", hex: "#c9a87c", category: "Creamy", accent: "#b89466" },
-  { name: "Honey", hex: "#d4a843", category: "Warm", accent: "#c99a30" },
-  { name: "Terracotta", hex: "#c4734e", category: "Warm", accent: "#b56340" },
-  { name: "Milk", hex: "#f7f1e7", category: "Light", accent: "#f0e8d8" },
-  { name: "Digital Cyan", hex: "#00dbc2", category: "Digital", accent: "#00b8a1" },
+  { name: "Espresso", hex: "#0e0a08", accent: "#1a1410" },
+  { name: "Dark Cocoa", hex: "#1a1410", accent: "#2a2218" },
+  { name: "Matcha", hex: "#96b88c", accent: "#7da872" },
+  { name: "Honey", hex: "#d4a843", accent: "#c99a30" },
+  { name: "Terracotta", hex: "#c4734e", accent: "#b56340" },
+  { name: "Sage", hex: "#7da872", accent: "#6a9460" },
+  { name: "Warm Stone", hex: "#c9a87c", accent: "#b89466" },
+  { name: "Digital Cyan", hex: "#00dbc2", accent: "#00b8a1" },
+];
+
+const capabilities = [
+  {
+    icon: Upload,
+    title: "Post & Share",
+    desc: "สร้างและแบ่งปันเนื้อหาของคุณเอง ไม่ว่าจะเป็นบทความ รูปภาพ หรือไอเดีย",
+  },
+  {
+    icon: MessageSquare,
+    title: "Comment & Discuss",
+    desc: "แลกเปลี่ยนความคิดเห็นกับชุมชน สร้างบทสนทนาที่มีความหมาย",
+  },
+  {
+    icon: LayoutDashboard,
+    title: "Your Dashboard",
+    desc: "ดูเนื้อหา กิจกรรม และสถิติของคุณในที่เดียว เข้าใจสถานะได้ทันที",
+  },
 ];
 
 const timelineEvents = [
@@ -96,37 +117,34 @@ export default function Landing() {
       className="min-h-screen text-miix-coffee"
     >
       {/* ─── NAV ─── */}
-      <nav className="fixed top-0 left-0 right-0 z-50 border-b-2 border-miix-coffee/15 bg-miix-cream/85 backdrop-blur-md">
+      <nav className="fixed top-0 left-0 right-0 z-50 border-b border-miix-cyan/10 bg-miix-cream/90 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3">
           <div className="flex items-center gap-3">
-            <div className="flex h-8 w-8 items-center justify-center rounded-md border-2 border-miix-coffee bg-miix-coffee">
-              <span className="text-xs font-bold text-miix-milk miix-font-mono">
+            <div className="flex h-8 w-8 items-center justify-center rounded-md border border-miix-cyan/30 bg-miix-cyan/10">
+              <span className="text-xs font-bold text-miix-cyan miix-font-mono">
                 M
               </span>
             </div>
-            <span className="text-sm font-bold uppercase tracking-[0.2em]">
-              Miix Studio
+            <span className="text-sm font-bold uppercase tracking-[0.15em]">
+              Miix <span className="text-miix-cyan">Analog</span> Digital
             </span>
           </div>
           <div className="hidden items-center gap-5 sm:flex">
-            <a href="#identity" className="miix-font-mono text-[11px] font-bold uppercase tracking-wider text-miix-coffee/50 transition-colors hover:text-miix-cyan">
+            <a href="#identity" className="miix-font-mono text-[11px] font-bold uppercase tracking-wider text-miix-milk/40 transition-colors hover:text-miix-cyan">
               Identity
             </a>
-            <a href="#philosophy" className="miix-font-mono text-[11px] font-bold uppercase tracking-wider text-miix-coffee/50 transition-colors hover:text-miix-cyan">
+            <a href="#philosophy" className="miix-font-mono text-[11px] font-bold uppercase tracking-wider text-miix-milk/40 transition-colors hover:text-miix-cyan">
               Philosophy
             </a>
-            <a href="#visual" className="miix-font-mono text-[11px] font-bold uppercase tracking-wider text-miix-coffee/50 transition-colors hover:text-miix-cyan">
-              Visual
+            <a href="#platform" className="miix-font-mono text-[11px] font-bold uppercase tracking-wider text-miix-milk/40 transition-colors hover:text-miix-cyan">
+              Platform
             </a>
-            <a href="#colors" className="miix-font-mono text-[11px] font-bold uppercase tracking-wider text-miix-coffee/50 transition-colors hover:text-miix-cyan">
+            <a href="#colors" className="miix-font-mono text-[11px] font-bold uppercase tracking-wider text-miix-milk/40 transition-colors hover:text-miix-cyan">
               Colors
             </a>
-            <span className="miix-font-mono text-[10px] text-miix-coffee/30">
-              v1.0.0
-            </span>
             <button
               onClick={() => navigate("/auth")}
-              className="rounded-md border-2 border-miix-coffee bg-miix-coffee px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-miix-milk transition-all hover:bg-miix-cyan hover:text-miix-coffee hover:shadow-[2px_2px_0px_#2a1810]"
+              className="rounded-md border border-miix-cyan/30 bg-miix-cyan/10 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-miix-cyan transition-all hover:bg-miix-cyan hover:text-miix-cream hover:border-miix-cyan"
             >
               Enter System →
             </button>
@@ -135,10 +153,10 @@ export default function Landing() {
       </nav>
 
       {/* ─── HERO ─── */}
-      <section className="relative min-h-screen border-b-2 border-miix-coffee/10 pt-20 miix-grad-hero miix-grid-bg">
-        {/* Decorative blobs */}
-        <div className="pointer-events-none absolute top-32 right-20 h-64 w-64 rounded-full bg-miix-cyan/8 blur-3xl" />
-        <div className="pointer-events-none absolute bottom-20 left-10 h-48 w-48 rounded-full bg-miix-matcha/10 blur-3xl" />
+      <section className="relative min-h-screen border-b border-miix-cyan/5 pt-20 miix-grad-hero miix-grid-bg">
+        {/* Decorative glow */}
+        <div className="pointer-events-none absolute top-32 left-1/4 h-96 w-96 rounded-full bg-miix-cyan/5 blur-[120px]" />
+        <div className="pointer-events-none absolute bottom-20 right-1/4 h-64 w-64 rounded-full bg-miix-honey/5 blur-[100px]" />
 
         <div className="relative mx-auto max-w-7xl px-6 pt-20 pb-16 md:pt-32 md:pb-24">
           {/* Terminal tag */}
@@ -146,10 +164,10 @@ export default function Landing() {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2, duration: 0.5 }}
-            className="mb-8 inline-flex items-center gap-2 rounded-md border-2 border-miix-coffee/20 bg-miix-oat/80 px-3 py-1.5 backdrop-blur-sm"
+            className="mb-8 inline-flex items-center gap-2 rounded-md border border-miix-cyan/20 bg-miix-cyan/5 px-3 py-1.5"
           >
-            <Terminal className="h-3.5 w-3.5" />
-            <span className="miix-font-mono text-xs font-medium uppercase tracking-wider">
+            <Terminal className="h-3.5 w-3.5 text-miix-cyan" />
+            <span className="miix-font-mono text-xs font-medium uppercase tracking-wider text-miix-cyan">
               System.boot()
             </span>
           </motion.div>
@@ -165,7 +183,7 @@ export default function Landing() {
             <br />
             <span className="relative inline-block">
               Well
-              <span className="ml-4 inline-block rounded-md border-2 border-miix-coffee bg-miix-cyan px-3 py-1 text-miix-coffee shadow-[3px_3px_0px_#2a1810]">
+              <span className="ml-4 inline-block rounded-md border border-miix-cyan/40 bg-miix-cyan/10 px-3 py-1 text-miix-cyan shadow-[0_0_30px_#00dbc220]">
                 Mixed.
               </span>
             </span>
@@ -176,10 +194,10 @@ export default function Landing() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.5 }}
-            className="mt-8 max-w-2xl rounded-md border-l-4 border-miix-cyan bg-miix-oat/40 pl-6 pr-4 py-4 text-lg leading-relaxed text-miix-coffee/70 backdrop-blur-sm"
+            className="mt-8 max-w-2xl rounded-md border-l-4 border-miix-cyan/40 bg-miix-cyan/5 pl-6 pr-4 py-4 text-lg leading-relaxed text-miix-milk/60"
           >
-            จุดตัดระหว่างความคิดแบบ Analog ที่เน้นความเข้าใจในตัวตน เข้ากับ
-            เทคโนโลยี Digital ที่แม่นยำและไร้รอยต่อ
+            แพลตฟอร์มที่ผสานความคิดสร้างสรรค์แบบ Analog เข้ากับเทคโนโลยี Digital
+            — ที่ซึ่งคุณสร้างเนื้อหา เชื่อมต่อชุมชน และเป็นเจ้าของพื้นที่ของตัวเอง
           </motion.p>
 
           {/* CTA */}
@@ -191,16 +209,16 @@ export default function Landing() {
           >
             <button
               onClick={() => navigate("/auth?returnTo=/dashboard")}
-              className="group flex items-center gap-3 rounded-md border-2 border-miix-coffee bg-miix-coffee px-8 py-4 text-sm font-bold uppercase tracking-wider text-miix-milk transition-all hover:bg-miix-cyan hover:text-miix-coffee hover:shadow-[4px_4px_0px_#2a1810]"
+              className="group flex items-center gap-3 rounded-md border border-miix-cyan/40 bg-miix-cyan/10 px-8 py-4 text-sm font-bold uppercase tracking-wider text-miix-cyan transition-all hover:bg-miix-cyan hover:text-miix-cream hover:shadow-[0_0_30px_#00dbc230]"
             >
               Enter the System
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </button>
             <a
-              href="#philosophy"
-              className="flex items-center gap-3 rounded-md border-2 border-miix-coffee/30 bg-miix-oat/50 px-8 py-4 text-sm font-bold uppercase tracking-wider text-miix-coffee transition-all hover:bg-miix-oat hover:border-miix-coffee hover:shadow-[4px_4px_0px_#2a1810] backdrop-blur-sm"
+              href="#platform"
+              className="flex items-center gap-3 rounded-md border border-miix-milk/10 bg-miix-milk/5 px-8 py-4 text-sm font-bold uppercase tracking-wider text-miix-milk/60 transition-all hover:bg-miix-milk/10 hover:text-miix-milk hover:border-miix-milk/20"
             >
-              Read the Philosophy
+              Explore the Platform
             </a>
           </motion.div>
 
@@ -209,7 +227,7 @@ export default function Landing() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.9, duration: 0.5 }}
-            className="mt-16 flex flex-wrap gap-6 rounded-md border-t-2 border-miix-coffee/10 bg-miix-oat/30 px-4 py-4 backdrop-blur-sm"
+            className="mt-16 flex flex-wrap gap-6 rounded-md border border-miix-cyan/5 bg-miix-cyan/3 px-4 py-4"
           >
             {[
               { label: "Status", value: "Online" },
@@ -217,7 +235,7 @@ export default function Landing() {
               { label: "Version", value: "1.0.0" },
             ].map((item) => (
               <div key={item.label} className="flex items-center gap-2">
-                <span className="miix-font-mono text-xs text-miix-coffee/40">
+                <span className="miix-font-mono text-xs text-miix-milk/30">
                   {item.label}:
                 </span>
                 <span className="miix-font-mono text-xs font-bold text-miix-cyan">
@@ -229,7 +247,7 @@ export default function Landing() {
         </div>
 
         {/* Decorative right panel */}
-        <div className="absolute right-0 bottom-0 hidden h-full w-80 border-l-2 border-miix-coffee/8 bg-miix-oat/30 backdrop-blur-sm lg:block">
+        <div className="absolute right-0 bottom-0 hidden h-full w-80 border-l border-miix-cyan/5 bg-miix-cyan/2 lg:block">
           <div className="flex h-full flex-col justify-center gap-4 px-6">
             {timelineEvents.map((event, i) => (
               <motion.div
@@ -241,11 +259,11 @@ export default function Landing() {
                 <span className="miix-font-mono text-xs font-bold text-miix-cyan">
                   {event.time}
                 </span>
-                <div className="flex-1 border-l-2 border-miix-coffee/15 pl-3">
-                  <p className="text-xs font-bold uppercase tracking-wider">
+                <div className="flex-1 border-l border-miix-cyan/10 pl-3">
+                  <p className="text-xs font-bold uppercase tracking-wider text-miix-milk/80">
                     {event.label}
                   </p>
-                  <p className="miix-font-mono text-[10px] text-miix-coffee/40">
+                  <p className="miix-font-mono text-[10px] text-miix-milk/30">
                     {event.status}
                   </p>
                 </div>
@@ -256,24 +274,24 @@ export default function Landing() {
       </section>
 
       {/* ─── WHAT IS MIIX ─── */}
-      <section className="border-b-2 border-miix-coffee/10 miix-grad-warm">
+      <section className="border-b border-miix-cyan/5 miix-grad-warm">
         <div id="identity" className="mx-auto max-w-7xl px-6 py-20 md:py-28">
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
             <motion.div {...fadeUp}>
-              <div className="mb-6 inline-flex items-center gap-2 rounded-md border-2 border-miix-coffee/20 bg-miix-cream/60 px-3 py-1.5 backdrop-blur-sm">
-                <Coffee className="h-3.5 w-3.5" />
-                <span className="miix-font-mono text-xs font-medium uppercase tracking-wider">
+              <div className="mb-6 inline-flex items-center gap-2 rounded-md border border-miix-cyan/15 bg-miix-cyan/5 px-3 py-1.5">
+                <Coffee className="h-3.5 w-3.5 text-miix-cyan" />
+                <span className="miix-font-mono text-xs font-medium uppercase tracking-wider text-miix-cyan">
                   01 / Identity
                 </span>
               </div>
               <h2 className="mb-6 text-4xl font-black uppercase leading-tight tracking-tight md:text-5xl">
                 What is
                 <br />
-                Miix Studio?
+                Miix Analog Digital?
               </h2>
-              <div className="space-y-4 text-base leading-relaxed text-miix-coffee/70">
+              <div className="space-y-4 text-base leading-relaxed text-miix-milk/50">
                 <p>
-                  <strong className="text-miix-coffee">Miix = การผสมผสาน</strong>{" "}
+                  <strong className="text-miix-milk">Miix = การผสมผสาน</strong>{" "}
                   สิ่งดี ๆ ให้กลายเป็นสิ่งที่ใช้งานได้จริง
                 </p>
                 <p>
@@ -282,8 +300,8 @@ export default function Landing() {
                 </p>
                 <p>
                   เราไม่ยึดติดกับสไตล์ของใครหรือกระแสนิยมที่ไร้รากฐาน
-                  ผลิตภัณฑ์ทุกชิ้นของเราต้องมี{" "}
-                  <span className="rounded-sm border-b-2 border-miix-cyan font-bold text-miix-coffee">
+                  ทุกฟีเจอร์ที่เราสร้างต้องมี{" "}
+                  <span className="border-b border-miix-cyan/40 font-bold text-miix-cyan">
                     "ลายเซ็นของ Miix"
                   </span>{" "}
                   ที่บ่งบอกถึงความตั้งใจและการใช้งานที่ถูกคิดมาอย่างถ่องแท้
@@ -296,29 +314,29 @@ export default function Landing() {
               transition={{ delay: 0.15, duration: 0.5 }}
               className="flex items-center"
             >
-              <div className="w-full rounded-lg border-2 border-miix-coffee/20 bg-miix-cream/80 p-8 shadow-[4px_4px_0px_#2a1810]/20 backdrop-blur-sm">
-                <div className="mb-4 flex items-center gap-2 border-b-2 border-miix-coffee/10 pb-4">
+              <div className="w-full rounded-lg border border-miix-cyan/10 bg-miix-oat/80 p-8">
+                <div className="mb-4 flex items-center gap-2 border-b border-miix-cyan/10 pb-4">
                   <Terminal className="h-4 w-4 text-miix-cyan" />
-                  <span className="miix-font-mono text-xs font-bold uppercase tracking-wider">
+                  <span className="miix-font-mono text-xs font-bold uppercase tracking-wider text-miix-cyan">
                     BrandMIX.dll
                   </span>
                 </div>
-                <pre className="miix-font-mono text-xs leading-relaxed text-miix-coffee/60">
-{`// Miix Studio — Brand DNA
-// ─────────────────────────
+                <pre className="miix-font-mono text-xs leading-relaxed text-miix-milk/40">
+{`// Miix Analog Digital — Brand DNA
+// ────────────────────────────────
 
 const BrandMIX = {
   identity:    "Analog × Digital",
   purpose:     "Good Ideas, Well Mixed",
   approach:    "Function → Form",
   principle:   "Less Decoration, More Meaning",
-  signature:   "ทุกชิ้นงานต้องมีลายเซ็น Miix",
+  signature:   "ทุกฟีเจอร์ต้องมีลายเซ็น Miix",
   rejection:   "ไม่ยึดติดกับกระแส",
 };
 
-// Status: ACTIVE
-// Mode:  HYBRID
-// Auth:  VERIFIED`}
+// Status:  ACTIVE
+// Mode:   HYBRID
+// Auth:   VERIFIED`}
                 </pre>
               </div>
             </motion.div>
@@ -329,14 +347,14 @@ const BrandMIX = {
       {/* ─── DESIGN PHILOSOPHY ─── */}
       <section
         id="philosophy"
-        className="border-b-2 border-miix-coffee/10 miix-grad-cyan-dark text-miix-milk"
+        className="border-b border-miix-cyan/5 miix-grad-cyan-dark text-miix-milk"
       >
         {/* Decorative glow */}
-        <div className="pointer-events-none absolute left-1/2 top-0 h-96 w-96 -translate-x-1/2 rounded-full bg-miix-cyan/5 blur-3xl" />
+        <div className="pointer-events-none absolute left-1/2 top-0 h-96 w-96 -translate-x-1/2 rounded-full bg-miix-cyan/5 blur-[120px]" />
 
         <div className="relative mx-auto max-w-7xl px-6 py-20 md:py-28">
           <motion.div {...fadeUp} className="mb-16">
-            <div className="mb-6 inline-flex items-center gap-2 rounded-md border-2 border-miix-cyan/30 bg-miix-cyan/10 px-3 py-1.5 backdrop-blur-sm">
+            <div className="mb-6 inline-flex items-center gap-2 rounded-md border border-miix-cyan/20 bg-miix-cyan/10 px-3 py-1.5">
               <Layers className="h-3.5 w-3.5 text-miix-cyan" />
               <span className="miix-font-mono text-xs font-medium uppercase tracking-wider text-miix-cyan">
                 02 / Philosophy
@@ -355,18 +373,18 @@ const BrandMIX = {
                 key={p.title}
                 {...stagger}
                 transition={{ delay: i * 0.08, duration: 0.4 }}
-                className="group rounded-lg border-2 border-miix-milk/10 bg-miix-milk/5 p-6 backdrop-blur-sm transition-all hover:border-miix-cyan/40 hover:bg-miix-milk/10"
+                className="group rounded-lg border border-miix-cyan/8 bg-miix-cyan/3 p-6 transition-all hover:border-miix-cyan/25 hover:bg-miix-cyan/5"
               >
-                <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-md border-2 border-miix-cyan/30 text-miix-cyan transition-all group-hover:border-miix-cyan group-hover:bg-miix-cyan group-hover:text-miix-coffee group-hover:shadow-[2px_2px_0px_#00dbc2]">
+                <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-md border border-miix-cyan/20 text-miix-cyan transition-all group-hover:border-miix-cyan/40 group-hover:bg-miix-cyan/10 group-hover:shadow-[0_0_15px_#00dbc220]">
                   <p.icon className="h-5 w-5" />
                 </div>
-                <p className="miix-font-mono mb-2 text-[10px] text-miix-cyan/60">
+                <p className="miix-font-mono mb-2 text-[10px] text-miix-cyan/50">
                   {String(i + 1).padStart(2, "0")}
                 </p>
-                <h3 className="mb-2 text-sm font-bold uppercase tracking-wider">
+                <h3 className="mb-2 text-sm font-bold uppercase tracking-wider text-miix-milk/90">
                   {p.title}
                 </h3>
-                <p className="text-sm leading-relaxed text-miix-milk/60">
+                <p className="text-sm leading-relaxed text-miix-milk/40">
                   {p.desc}
                 </p>
               </motion.div>
@@ -375,14 +393,58 @@ const BrandMIX = {
         </div>
       </section>
 
-      {/* ─── VISUAL LANGUAGE ─── */}
-      <section id="visual" className="border-b-2 border-miix-coffee/10 bg-miix-milk miix-grid-bg-strong">
+      {/* ─── PLATFORM CAPABILITIES ─── */}
+      <section id="platform" className="border-b border-miix-cyan/5 miix-grad-dark miix-grid-bg-strong">
         <div className="mx-auto max-w-7xl px-6 py-20 md:py-28">
           <motion.div {...fadeUp} className="mb-16">
-            <div className="mb-6 inline-flex items-center gap-2 rounded-md border-2 border-miix-coffee/20 bg-miix-oat/80 px-3 py-1.5 backdrop-blur-sm">
-              <Terminal className="h-3.5 w-3.5" />
-              <span className="miix-font-mono text-xs font-medium uppercase tracking-wider">
-                03 / Visual Language
+            <div className="mb-6 inline-flex items-center gap-2 rounded-md border border-miix-cyan/15 bg-miix-cyan/5 px-3 py-1.5">
+              <Monitor className="h-3.5 w-3.5 text-miix-cyan" />
+              <span className="miix-font-mono text-xs font-medium uppercase tracking-wider text-miix-cyan">
+                03 / Platform
+              </span>
+            </div>
+            <h2 className="text-4xl font-black uppercase leading-tight tracking-tight md:text-5xl">
+              What You
+              <br />
+              Can Do
+            </h2>
+            <p className="mt-4 max-w-xl text-sm leading-relaxed text-miix-milk/40">
+              แพลตฟอร์มที่ออกแบบมาเพื่อคุณ — สร้างเนื้อหา เชื่อมต่อชุมชน
+              และจัดการทุกอย่างจากแดชบอร์ดส่วนตัว
+            </p>
+          </motion.div>
+
+          <div className="grid gap-6 md:grid-cols-3">
+            {capabilities.map((cap, i) => (
+              <motion.div
+                key={cap.title}
+                {...stagger}
+                transition={{ delay: i * 0.1, duration: 0.4 }}
+                className="group rounded-lg border border-miix-cyan/10 bg-miix-oat/60 p-8 transition-all hover:border-miix-cyan/30 hover:shadow-[0_0_30px_#00dbc215]"
+              >
+                <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-lg border border-miix-cyan/20 bg-miix-cyan/5 text-miix-cyan transition-all group-hover:bg-miix-cyan/15 group-hover:shadow-[0_0_20px_#00dbc220]">
+                  <cap.icon className="h-6 w-6" />
+                </div>
+                <h3 className="mb-3 text-lg font-bold uppercase tracking-wider text-miix-milk/90">
+                  {cap.title}
+                </h3>
+                <p className="text-sm leading-relaxed text-miix-milk/40">
+                  {cap.desc}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── VISUAL LANGUAGE ─── */}
+      <section className="border-b border-miix-cyan/5 bg-miix-cream miix-grid-bg-strong">
+        <div className="mx-auto max-w-7xl px-6 py-20 md:py-28">
+          <motion.div {...fadeUp} className="mb-16">
+            <div className="mb-6 inline-flex items-center gap-2 rounded-md border border-miix-cyan/15 bg-miix-cyan/5 px-3 py-1.5">
+              <Terminal className="h-3.5 w-3.5 text-miix-cyan" />
+              <span className="miix-font-mono text-xs font-medium uppercase tracking-wider text-miix-cyan">
+                04 / Visual Language
               </span>
             </div>
             <h2 className="text-4xl font-black uppercase leading-tight tracking-tight md:text-5xl">
@@ -396,16 +458,16 @@ const BrandMIX = {
             {/* Terminal / Early Digital */}
             <motion.div
               {...fadeUp}
-              className="rounded-lg border-2 border-miix-coffee/20 bg-miix-oat/60 p-8 backdrop-blur-sm"
+              className="rounded-lg border border-miix-cyan/10 bg-miix-oat/60 p-8"
             >
-              <h3 className="mb-4 text-sm font-bold uppercase tracking-wider">
+              <h3 className="mb-4 text-sm font-bold uppercase tracking-wider text-miix-milk/80">
                 Terminal / Early Digital
               </h3>
-              <p className="mb-6 text-sm leading-relaxed text-miix-coffee/70">
+              <p className="mb-6 text-sm leading-relaxed text-miix-milk/40">
                 อ้างอิงความคลาสสิกของยุคเริ่มต้นของ Digital Interface เส้น
                 ตัวอักษร และตัวเลข ถูกวางในระบบ Grid ที่คำนวณมาอย่างดี
               </p>
-              <div className="rounded-md border-2 border-miix-coffee/20 bg-miix-coffee p-4">
+              <div className="rounded-md border border-miix-cyan/10 bg-miix-cream p-4">
                 <div className="miix-font-mono space-y-1 text-xs text-miix-cyan">
                   <p>
                     <span className="text-miix-matcha">$</span> miix
@@ -419,7 +481,7 @@ const BrandMIX = {
                     <span className="text-miix-matcha">$</span> render
                     --font=mono
                   </p>
-                  <p className="text-miix-milk/50">
+                  <p className="text-miix-milk/40">
                     → System ready. All components aligned.
                   </p>
                 </div>
@@ -430,12 +492,12 @@ const BrandMIX = {
             <motion.div
               {...fadeUp}
               transition={{ delay: 0.1, duration: 0.5 }}
-              className="rounded-lg border-2 border-miix-coffee/20 bg-miix-oat/60 p-8 backdrop-blur-sm"
+              className="rounded-lg border border-miix-cyan/10 bg-miix-oat/60 p-8"
             >
-              <h3 className="mb-4 text-sm font-bold uppercase tracking-wider">
+              <h3 className="mb-4 text-sm font-bold uppercase tracking-wider text-miix-milk/80">
                 Timeline as Component
               </h3>
-              <p className="mb-6 text-sm leading-relaxed text-miix-coffee/70">
+              <p className="mb-6 text-sm leading-relaxed text-miix-milk/40">
                 เวลา (Timeline) คือองค์ประกอบหลักที่บ่งบอกถึงจังหวะของการทำงาน
               </p>
               <div className="space-y-3">
@@ -452,18 +514,18 @@ const BrandMIX = {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: si * 0.08, duration: 0.35 }}
-                    className="flex items-center gap-3 rounded-md border-2 border-miix-coffee/10 bg-miix-cream/60 px-4 py-2.5"
+                    className="flex items-center gap-3 rounded-md border border-miix-cyan/8 bg-miix-cyan/3 px-4 py-2.5"
                   >
                     <span
-                      className={`miix-font-mono text-xs font-bold ${s.active ? "text-miix-cyan" : "text-miix-coffee/30"}`}
+                      className={`miix-font-mono text-xs font-bold ${s.active ? "text-miix-cyan" : "text-miix-milk/20"}`}
                     >
                       {s.step}
                     </span>
                     <div
-                      className={`h-2 w-2 rounded-full ${s.active ? "bg-miix-cyan" : "bg-miix-coffee/20"}`}
+                      className={`h-2 w-2 rounded-full ${s.active ? "bg-miix-cyan shadow-[0_0_8px_#00dbc260]" : "bg-miix-milk/10"}`}
                     />
                     <span
-                      className={`text-xs font-bold uppercase tracking-wider ${s.active ? "text-miix-coffee" : "text-miix-coffee/30"}`}
+                      className={`text-xs font-bold uppercase tracking-wider ${s.active ? "text-miix-milk/80" : "text-miix-milk/20"}`}
                     >
                       {s.label}
                     </span>
@@ -481,12 +543,12 @@ const BrandMIX = {
             <motion.div
               {...fadeUp}
               transition={{ delay: 0.15, duration: 0.5 }}
-              className="rounded-lg border-2 border-miix-coffee/20 bg-miix-oat/60 p-8 backdrop-blur-sm"
+              className="rounded-lg border border-miix-cyan/10 bg-miix-oat/60 p-8"
             >
-              <h3 className="mb-4 text-sm font-bold uppercase tracking-wider">
+              <h3 className="mb-4 text-sm font-bold uppercase tracking-wider text-miix-milk/80">
                 Space & Logic
               </h3>
-              <p className="mb-6 text-sm leading-relaxed text-miix-coffee/70">
+              <p className="mb-6 text-sm leading-relaxed text-miix-milk/40">
                 พื้นที่ว่าง (White Space) ไม่ใช่แค่การเว้น
                 แต่คือการจัดระเบียบให้ลำดับการอ่านชัดเจน
               </p>
@@ -496,12 +558,12 @@ const BrandMIX = {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4 }}
-                  className="col-span-2 rounded-md border-2 border-miix-coffee/20 bg-miix-coffee p-4"
+                  className="col-span-2 rounded-md border border-miix-cyan/20 bg-miix-cream p-4"
                 >
                   <p className="miix-font-mono text-[10px] text-miix-cyan">
                     PRIMARY
                   </p>
-                  <p className="mt-1 text-sm font-bold uppercase">
+                  <p className="mt-1 text-sm font-bold uppercase text-miix-milk/80">
                     Hierarchy Matters
                   </p>
                 </motion.div>
@@ -510,9 +572,9 @@ const BrandMIX = {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.08, duration: 0.4 }}
-                  className="rounded-md border-2 border-miix-coffee/10 bg-miix-cream/80 p-4"
+                  className="rounded-md border border-miix-cyan/8 bg-miix-oat/60 p-4"
                 >
-                  <p className="miix-font-mono text-[10px] text-miix-coffee/40">
+                  <p className="miix-font-mono text-[10px] text-miix-milk/25">
                     SECONDARY
                   </p>
                 </motion.div>
@@ -521,9 +583,9 @@ const BrandMIX = {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.16, duration: 0.4 }}
-                  className="rounded-md border-2 border-miix-coffee/10 bg-miix-cream/80 p-4"
+                  className="rounded-md border border-miix-cyan/8 bg-miix-oat/60 p-4"
                 >
-                  <p className="miix-font-mono text-[10px] text-miix-coffee/40">
+                  <p className="miix-font-mono text-[10px] text-miix-milk/25">
                     TERTIARY
                   </p>
                 </motion.div>
@@ -532,9 +594,9 @@ const BrandMIX = {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.24, duration: 0.4 }}
-                  className="col-span-2 rounded-md border-2 border-miix-coffee/8 bg-miix-oat/60 p-4"
+                  className="col-span-2 rounded-md border border-miix-cyan/5 bg-miix-cyan/2 p-4"
                 >
-                  <p className="miix-font-mono text-[10px] text-miix-coffee/40">
+                  <p className="miix-font-mono text-[10px] text-miix-milk/20">
                     SUPPORTING
                   </p>
                 </motion.div>
@@ -545,12 +607,12 @@ const BrandMIX = {
             <motion.div
               {...fadeUp}
               transition={{ delay: 0.2, duration: 0.5 }}
-              className="rounded-lg border-2 border-miix-coffee/20 bg-miix-oat/60 p-8 backdrop-blur-sm"
+              className="rounded-lg border border-miix-cyan/10 bg-miix-oat/60 p-8"
             >
-              <h3 className="mb-4 text-sm font-bold uppercase tracking-wider">
+              <h3 className="mb-4 text-sm font-bold uppercase tracking-wider text-miix-milk/80">
                 Visual Integrity
               </h3>
-              <p className="mb-6 text-sm leading-relaxed text-miix-coffee/70">
+              <p className="mb-6 text-sm leading-relaxed text-miix-milk/40">
                 เราไม่ใช้กราฟิกเพื่อประดับให้สวยงามโดยปราศจากเหตุผล
                 ทุกจุดสีและเส้นสายคือส่วนหนึ่งของการทำงานของระบบ
               </p>
@@ -562,16 +624,16 @@ const BrandMIX = {
                     whileInView={{ scaleY: 1 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.1 + i * 0.06, duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] }}
-                    className="flex-1 rounded-t-sm border-2 border-miix-coffee/20 origin-bottom"
+                    className="flex-1 rounded-t-sm border border-miix-cyan/10 origin-bottom"
                     style={{ height: `${h * 0.4}px` }}
                   >
                     <div
-                      className={`h-full rounded-t-sm ${i % 3 === 0 ? "bg-miix-cyan" : i % 3 === 1 ? "bg-miix-coffee" : "bg-miix-matcha"}`}
+                      className={`h-full rounded-t-sm ${i % 3 === 0 ? "bg-miix-cyan/60" : i % 3 === 1 ? "bg-miix-honey/50" : "bg-miix-terracotta/50"}`}
                     />
                   </motion.div>
                 ))}
               </div>
-              <p className="miix-font-mono mt-2 text-[10px] text-miix-coffee/40">
+              <p className="miix-font-mono mt-2 text-[10px] text-miix-milk/20">
                 Every pixel has purpose. Every color has reason.
               </p>
             </motion.div>
@@ -580,13 +642,13 @@ const BrandMIX = {
       </section>
 
       {/* ─── COLOR DNA ─── */}
-      <section id="colors" className="border-b-2 border-miix-coffee/10 miix-grad-dark text-miix-milk">
+      <section id="colors" className="border-b border-miix-cyan/5 miix-grad-dark text-miix-milk">
         <div className="mx-auto max-w-7xl px-6 py-20 md:py-28">
           <motion.div {...fadeUp} className="mb-16">
-            <div className="mb-6 inline-flex items-center gap-2 rounded-md border-2 border-miix-cyan/30 bg-miix-cyan/10 px-3 py-1.5 backdrop-blur-sm">
+            <div className="mb-6 inline-flex items-center gap-2 rounded-md border border-miix-cyan/20 bg-miix-cyan/10 px-3 py-1.5">
               <Leaf className="h-3.5 w-3.5 text-miix-cyan" />
               <span className="miix-font-mono text-xs font-medium uppercase tracking-wider text-miix-cyan">
-                04 / Color DNA
+                05 / Color DNA
               </span>
             </div>
             <h2 className="text-4xl font-black uppercase leading-tight tracking-tight md:text-5xl">
@@ -594,7 +656,7 @@ const BrandMIX = {
               <br />
               to Digital
             </h2>
-            <p className="mt-4 max-w-xl text-sm leading-relaxed text-miix-milk/60">
+            <p className="mt-4 max-w-xl text-sm leading-relaxed text-miix-milk/40">
               โทนสีที่ดึงมาจากวัตถุดิบจริง เพื่อให้ความรู้สึกที่จับต้องได้
               ผสานด้วย Digital Cyan ที่เป็นตัวเชื่อมโยงเทคโนโลยี
             </p>
@@ -606,10 +668,10 @@ const BrandMIX = {
                 key={c.name}
                 {...stagger}
                 transition={{ delay: i * 0.06, duration: 0.4 }}
-                className="overflow-hidden rounded-lg border-2 border-miix-milk/10 transition-all hover:border-miix-cyan/40 hover:shadow-[0_0_20px_rgba(0,219,194,0.1)]"
+                className="overflow-hidden rounded-lg border border-miix-cyan/8 transition-all hover:border-miix-cyan/30 hover:shadow-[0_0_20px_#00dbc210]"
               >
                 <div
-                  className="h-24 border-b-2 border-miix-milk/10 relative overflow-hidden"
+                  className="h-24 border-b border-miix-cyan/5 relative overflow-hidden"
                   style={{ backgroundColor: c.hex }}
                 >
                   <div
@@ -618,14 +680,11 @@ const BrandMIX = {
                   />
                 </div>
                 <div className="p-4">
-                  <p className="text-sm font-bold uppercase tracking-wider">
+                  <p className="text-sm font-bold uppercase tracking-wider text-miix-milk/80">
                     {c.name}
                   </p>
-                  <p className="miix-font-mono mt-1 text-[10px] text-miix-milk/50">
+                  <p className="miix-font-mono mt-1 text-[10px] text-miix-milk/30">
                     {c.hex}
-                  </p>
-                  <p className="miix-font-mono mt-1 text-[10px] text-miix-cyan/60">
-                    {c.category}
                   </p>
                 </div>
               </motion.div>
@@ -635,13 +694,13 @@ const BrandMIX = {
       </section>
 
       {/* ─── WHAT WE ARE NOT ─── */}
-      <section className="border-b-2 border-miix-coffee/10 miix-grad-warm">
+      <section className="border-b border-miix-cyan/5 miix-grad-warm">
         <div className="mx-auto max-w-7xl px-6 py-20 md:py-28">
           <motion.div {...fadeUp} className="mb-16">
-            <div className="mb-6 inline-flex items-center gap-2 rounded-md border-2 border-miix-coffee/20 bg-miix-cream/60 px-3 py-1.5 backdrop-blur-sm">
-              <Eye className="h-3.5 w-3.5" />
-              <span className="miix-font-mono text-xs font-medium uppercase tracking-wider">
-                05 / Boundaries
+            <div className="mb-6 inline-flex items-center gap-2 rounded-md border border-miix-cyan/15 bg-miix-cyan/5 px-3 py-1.5">
+              <Eye className="h-3.5 w-3.5 text-miix-cyan" />
+              <span className="miix-font-mono text-xs font-medium uppercase tracking-wider text-miix-cyan">
+                06 / Boundaries
               </span>
             </div>
             <h2 className="text-4xl font-black uppercase leading-tight tracking-tight md:text-5xl">
@@ -657,17 +716,17 @@ const BrandMIX = {
                 key={item.label}
                 {...stagger}
                 transition={{ delay: i * 0.08, duration: 0.4 }}
-                className="rounded-lg border-2 border-miix-coffee/15 bg-miix-cream/70 p-6 backdrop-blur-sm transition-all hover:border-miix-cyan/40 hover:shadow-[4px_4px_0px_#00dbc233]"
+                className="rounded-lg border border-miix-cyan/8 bg-miix-oat/50 p-6 transition-all hover:border-miix-cyan/25 hover:shadow-[0_0_20px_#00dbc210]"
               >
                 <div className="mb-3 flex items-center gap-2">
                   <span className="miix-font-mono text-lg font-bold text-miix-terracotta">
                     ✕
                   </span>
-                  <h3 className="text-xs font-bold uppercase tracking-wider">
+                  <h3 className="text-xs font-bold uppercase tracking-wider text-miix-milk/80">
                     {item.label}
                   </h3>
                 </div>
-                <p className="text-sm leading-relaxed text-miix-coffee/60">
+                <p className="text-sm leading-relaxed text-miix-milk/40">
                   {item.desc}
                 </p>
               </motion.div>
@@ -677,13 +736,13 @@ const BrandMIX = {
       </section>
 
       {/* ─── UX PHILOSOPHY ─── */}
-      <section className="border-b-2 border-miix-coffee/10 bg-miix-milk miix-grid-bg">
+      <section className="border-b border-miix-cyan/5 bg-miix-cream miix-grid-bg">
         <div className="mx-auto max-w-7xl px-6 py-20 md:py-28">
           <motion.div {...fadeUp} className="mb-16">
-            <div className="mb-6 inline-flex items-center gap-2 rounded-md border-2 border-miix-coffee/20 bg-miix-oat/80 px-3 py-1.5 backdrop-blur-sm">
-              <Zap className="h-3.5 w-3.5" />
-              <span className="miix-font-mono text-xs font-medium uppercase tracking-wider">
-                06 / UX
+            <div className="mb-6 inline-flex items-center gap-2 rounded-md border border-miix-cyan/15 bg-miix-cyan/5 px-3 py-1.5">
+              <Zap className="h-3.5 w-3.5 text-miix-cyan" />
+              <span className="miix-font-mono text-xs font-medium uppercase tracking-wider text-miix-cyan">
+                07 / UX
               </span>
             </div>
             <h2 className="text-4xl font-black uppercase leading-tight tracking-tight md:text-5xl">
@@ -703,9 +762,9 @@ const BrandMIX = {
                 grad: "miix-grad-dark",
               },
               {
-                role: "Assistant",
+                role: "Creator",
                 question: '"ต้องทำอะไรต่อ"',
-                answer: "ขั้นตอนงานถัดไป",
+                answer: "เครื่องมือสร้างเนื้อหาถัดไป",
                 icon: "10",
                 grad: "miix-grad-sage",
               },
@@ -721,20 +780,20 @@ const BrandMIX = {
                 key={item.role}
                 {...stagger}
                 transition={{ delay: i * 0.1, duration: 0.4 }}
-                className={`rounded-lg border-2 border-miix-coffee/15 ${item.grad} p-6`}
+                className={`rounded-lg border border-miix-cyan/10 ${item.grad} p-6`}
               >
                 <div className="mb-4 flex items-center justify-between">
                   <span className="miix-font-mono text-xs font-bold text-miix-cyan">
                     [{item.icon}]
                   </span>
-                  <span className="rounded-md border border-miix-cyan/30 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-miix-cyan">
+                  <span className="rounded-md border border-miix-cyan/20 bg-miix-cyan/5 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-miix-cyan">
                     {item.role}
                   </span>
                 </div>
-                <p className="mb-2 text-lg font-bold text-miix-milk">
+                <p className="mb-2 text-lg font-bold text-miix-milk/90">
                   {item.question}
                 </p>
-                <p className="miix-font-mono text-xs text-miix-milk/50">
+                <p className="miix-font-mono text-xs text-miix-milk/40">
                   → {item.answer}
                 </p>
               </motion.div>
@@ -744,14 +803,14 @@ const BrandMIX = {
       </section>
 
       {/* ─── CTA ─── */}
-      <section className="border-b-2 border-miix-coffee/10 miix-grad-cyan-dark text-miix-milk relative overflow-hidden">
-        {/* Decorative glow */}
-        <div className="pointer-events-none absolute -bottom-20 -right-20 h-80 w-80 rounded-full bg-miix-cyan/10 blur-3xl" />
-        <div className="pointer-events-none absolute -top-20 -left-20 h-60 w-60 rounded-full bg-miix-matcha/8 blur-3xl" />
+      <section className="border-b border-miix-cyan/5 miix-grad-cyan-dark text-miix-milk relative overflow-hidden">
+        {/* Decorative glows */}
+        <div className="pointer-events-none absolute -bottom-20 -right-20 h-80 w-80 rounded-full bg-miix-cyan/8 blur-[120px]" />
+        <div className="pointer-events-none absolute -top-20 -left-20 h-60 w-60 rounded-full bg-miix-honey/5 blur-[100px]" />
 
         <div className="relative mx-auto max-w-7xl px-6 py-20 md:py-28">
           <motion.div {...fadeUp} className="text-center">
-            <div className="mb-8 inline-flex items-center gap-2 rounded-md border-2 border-miix-cyan/30 bg-miix-cyan/10 px-3 py-1.5 backdrop-blur-sm">
+            <div className="mb-8 inline-flex items-center gap-2 rounded-md border border-miix-cyan/20 bg-miix-cyan/10 px-3 py-1.5">
               <Monitor className="h-3.5 w-3.5 text-miix-cyan" />
               <span className="miix-font-mono text-xs font-medium uppercase tracking-wider text-miix-cyan">
                 System Ready
@@ -762,13 +821,13 @@ const BrandMIX = {
               <br />
               <span className="text-miix-cyan">Mix</span>?
             </h2>
-            <p className="mx-auto mb-10 max-w-lg text-sm leading-relaxed text-miix-milk/60">
-              เข้าร่วมกับ Miix Studio — ที่ซึ่งความคิดแบบ Analog
-              ผสานกับเทคโนโลยี Digital เพื่อสร้างผลิตภัณฑ์ที่มีลายเซ็นของตัวเอง
+            <p className="mx-auto mb-10 max-w-lg text-sm leading-relaxed text-miix-milk/40">
+              เข้าร่วม Miix Analog Digital — ที่ซึ่งคุณสร้างเนื้อหา
+              เชื่อมต่อชุมชน และเป็นเจ้าของพื้นที่ดิจิทัลของตัวเอง
             </p>
             <button
               onClick={() => navigate("/auth?returnTo=/dashboard")}
-              className="group inline-flex items-center gap-3 rounded-md border-2 border-miix-milk/30 bg-miix-milk/10 px-10 py-5 text-sm font-bold uppercase tracking-wider text-miix-milk backdrop-blur-sm transition-all hover:bg-miix-cyan hover:text-miix-coffee hover:border-miix-cyan hover:shadow-[4px_4px_0px_#f7f1e733]"
+              className="group inline-flex items-center gap-3 rounded-md border border-miix-cyan/40 bg-miix-cyan/10 px-10 py-5 text-sm font-bold uppercase tracking-wider text-miix-cyan backdrop-blur-sm transition-all hover:bg-miix-cyan hover:text-miix-cream hover:border-miix-cyan hover:shadow-[0_0_40px_#00dbc230]"
             >
               Enter the System
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -785,23 +844,23 @@ const BrandMIX = {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="flex flex-col items-center justify-between gap-4 border-t border-miix-milk/10 pt-8 sm:flex-row"
+            className="flex flex-col items-center justify-between gap-4 border-t border-miix-cyan/5 pt-8 sm:flex-row"
           >
             <div className="flex items-center gap-3">
-              <div className="flex h-6 w-6 items-center justify-center rounded-sm border border-miix-cyan/40">
+              <div className="flex h-6 w-6 items-center justify-center rounded-sm border border-miix-cyan/30 bg-miix-cyan/10">
                 <span className="text-[8px] font-bold text-miix-cyan miix-font-mono">
                   M
                 </span>
               </div>
               <span className="text-xs font-bold uppercase tracking-[0.15em]">
-                Miix Studio
+                Miix <span className="text-miix-cyan">Analog</span> Digital
               </span>
             </div>
             <div className="flex items-center gap-6">
-              <span className="miix-font-mono text-[10px] text-miix-milk/30">
+              <span className="miix-font-mono text-[10px] text-miix-milk/20">
                 Good Ideas, Well Mixed.
               </span>
-              <span className="miix-font-mono text-[10px] text-miix-milk/30">
+              <span className="miix-font-mono text-[10px] text-miix-milk/20">
                 © 2026
               </span>
             </div>

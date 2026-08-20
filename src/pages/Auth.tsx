@@ -111,22 +111,22 @@ function Auth({ redirectAfterAuth }: AuthProps = {}) {
   return (
     <div className="min-h-screen flex flex-col miix-grad-hero miix-grid-bg">
       {/* Nav */}
-      <nav className="border-b-2 border-miix-coffee/15 bg-miix-cream/85 backdrop-blur-md">
+      <nav className="border-b border-miix-cyan/10 bg-miix-cream/90 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3">
           <button
             onClick={() => navigate("/")}
             className="flex items-center gap-3"
           >
-            <div className="flex h-7 w-7 items-center justify-center rounded-md border-2 border-miix-coffee bg-miix-coffee">
-              <span className="text-[10px] font-bold text-miix-milk miix-font-mono">
+            <div className="flex h-7 w-7 items-center justify-center rounded-md border border-miix-cyan/30 bg-miix-cyan/10">
+              <span className="text-[10px] font-bold text-miix-cyan miix-font-mono">
                 M
               </span>
             </div>
-            <span className="text-xs font-bold uppercase tracking-[0.2em]">
-              Miix Studio
+            <span className="text-xs font-bold uppercase tracking-[0.15em]">
+              Miix <span className="text-miix-cyan">Analog</span> Digital
             </span>
           </button>
-          <span className="miix-font-mono text-[10px] text-miix-coffee/40">
+          <span className="miix-font-mono text-[10px] text-miix-milk/20">
             v1.0.0
           </span>
         </div>
@@ -136,21 +136,21 @@ function Auth({ redirectAfterAuth }: AuthProps = {}) {
       <div className="flex-1 flex items-center justify-center px-4">
         <div className="w-full max-w-[400px]">
           {/* Terminal header */}
-          <div className="mb-4 inline-flex items-center gap-2 rounded-md border-2 border-miix-coffee/20 bg-miix-oat/80 px-3 py-1.5 backdrop-blur-sm">
-            <Terminal className="h-3.5 w-3.5" />
-            <span className="miix-font-mono text-xs font-medium uppercase tracking-wider">
+          <div className="mb-4 inline-flex items-center gap-2 rounded-md border border-miix-cyan/15 bg-miix-cyan/5 px-3 py-1.5">
+            <Terminal className="h-3.5 w-3.5 text-miix-cyan" />
+            <span className="miix-font-mono text-xs font-medium uppercase tracking-wider text-miix-cyan">
               Auth Terminal
             </span>
           </div>
 
-          <Card className="rounded-lg border-2 border-miix-coffee/20 shadow-[4px_4px_0px_#2a1810]/20 bg-miix-cream/90 backdrop-blur-sm">
+          <Card className="rounded-lg border border-miix-cyan/10 bg-miix-oat/90 backdrop-blur-sm">
             {step === "signIn" ? (
               <>
                 <CardHeader className="text-center pb-2">
-                  <CardTitle className="text-lg font-black uppercase tracking-wider">
+                  <CardTitle className="text-lg font-black uppercase tracking-wider text-miix-milk">
                     Access System
                   </CardTitle>
-                  <CardDescription className="text-xs">
+                  <CardDescription className="text-xs text-miix-milk/40">
                     Enter your email to authenticate
                   </CardDescription>
                 </CardHeader>
@@ -158,12 +158,12 @@ function Auth({ redirectAfterAuth }: AuthProps = {}) {
                   <CardContent>
                     <div className="relative flex items-center gap-2">
                       <div className="relative flex-1">
-                        <Mail className="absolute left-3 top-3 h-4 w-4 text-miix-coffee/40" />
+                        <Mail className="absolute left-3 top-3 h-4 w-4 text-miix-milk/20" />
                         <Input
                           name="email"
                           placeholder="name@example.com"
                           type="email"
-                          className="pl-9 rounded-md border-2 border-miix-coffee/20 bg-miix-oat/60 focus:border-miix-cyan focus:ring-0"
+                          className="pl-9 rounded-md border border-miix-cyan/10 bg-miix-cream/80 text-miix-milk/70 placeholder:text-miix-milk/20 focus:border-miix-cyan/30 focus:ring-0"
                           disabled={isLoading}
                           required
                         />
@@ -173,7 +173,7 @@ function Auth({ redirectAfterAuth }: AuthProps = {}) {
                         variant="outline"
                         size="icon"
                         disabled={isLoading}
-                        className="rounded-md border-2 border-miix-coffee bg-miix-coffee text-miix-milk hover:bg-miix-cyan hover:text-miix-coffee hover:border-miix-cyan shrink-0"
+                        className="rounded-md border border-miix-cyan/30 bg-miix-cyan/10 text-miix-cyan hover:bg-miix-cyan hover:text-miix-cream hover:border-miix-cyan shrink-0"
                       >
                         {isLoading ? (
                           <Loader2 className="h-4 w-4 animate-spin" />
@@ -183,17 +183,17 @@ function Auth({ redirectAfterAuth }: AuthProps = {}) {
                       </Button>
                     </div>
                     {error && (
-                      <p className="mt-2 text-sm text-miix-destructive font-medium">
+                      <p className="mt-2 text-sm text-destructive font-medium">
                         {error}
                       </p>
                     )}
                     <div className="mt-4">
                       <div className="relative">
                         <div className="absolute inset-0 flex items-center">
-                          <span className="w-full border-t-2 border-miix-coffee/20" />
+                          <span className="w-full border-t border-miix-cyan/10" />
                         </div>
                         <div className="relative flex justify-center text-xs uppercase">
-                          <span className="bg-miix-milk px-2 text-miix-coffee/40 miix-font-mono">
+                          <span className="bg-miix-oat/90 px-2 text-miix-milk/20 miix-font-mono">
                             OR
                           </span>
                         </div>
@@ -202,7 +202,7 @@ function Auth({ redirectAfterAuth }: AuthProps = {}) {
                       <Button
                         type="button"
                         variant="outline"
-                        className="w-full mt-4 rounded-md border-2 border-miix-coffee/20 bg-transparent hover:bg-miix-oat/60"
+                        className="w-full mt-4 rounded-md border border-miix-cyan/10 bg-transparent text-miix-milk/40 hover:bg-miix-cyan/5 hover:text-miix-milk/60 hover:border-miix-cyan/20"
                         onClick={handleGuestLogin}
                         disabled={isLoading}
                       >
@@ -216,10 +216,10 @@ function Auth({ redirectAfterAuth }: AuthProps = {}) {
             ) : (
               <>
                 <CardHeader className="text-center pb-2">
-                  <CardTitle className="text-lg font-black uppercase tracking-wider">
+                  <CardTitle className="text-lg font-black uppercase tracking-wider text-miix-milk">
                     Verify Code
                   </CardTitle>
-                  <CardDescription className="text-xs">
+                  <CardDescription className="text-xs text-miix-milk/40">
                     We've sent a code to {step.email}
                   </CardDescription>
                 </CardHeader>
@@ -251,11 +251,11 @@ function Auth({ redirectAfterAuth }: AuthProps = {}) {
                       </InputOTP>
                     </div>
                     {error && (
-                      <p className="mt-2 text-sm text-miix-destructive text-center font-medium">
+                      <p className="mt-2 text-sm text-destructive text-center font-medium">
                         {error}
                       </p>
                     )}
-                    <p className="text-xs text-miix-coffee/50 text-center mt-4">
+                    <p className="text-xs text-miix-milk/30 text-center mt-4">
                       Didn't receive a code?{" "}
                       <Button
                         variant="link"
@@ -269,7 +269,7 @@ function Auth({ redirectAfterAuth }: AuthProps = {}) {
                   <CardFooter className="flex-col gap-2">
                     <Button
                       type="submit"
-                      className="w-full rounded-md border-2 border-miix-coffee bg-miix-coffee text-miix-milk hover:bg-miix-cyan hover:text-miix-coffee hover:border-miix-cyan font-bold uppercase tracking-wider text-xs"
+                      className="w-full rounded-md border border-miix-cyan/30 bg-miix-cyan/10 text-miix-cyan hover:bg-miix-cyan hover:text-miix-cream hover:border-miix-cyan font-bold uppercase tracking-wider text-xs"
                       disabled={isLoading || otp.length !== 6}
                     >
                       {isLoading ? (
@@ -289,7 +289,7 @@ function Auth({ redirectAfterAuth }: AuthProps = {}) {
                       variant="ghost"
                       onClick={() => setStep("signIn")}
                       disabled={isLoading}
-                      className="w-full text-xs"
+                      className="w-full text-xs text-miix-milk/30 hover:text-miix-milk/50"
                     >
                       Use different email
                     </Button>
@@ -298,8 +298,8 @@ function Auth({ redirectAfterAuth }: AuthProps = {}) {
               </>
             )}
 
-            <div className="py-3 px-6 text-[10px] text-center text-miix-coffee/40 bg-miix-oat/60 border-t-2 border-miix-coffee/10 miix-font-mono uppercase tracking-wider rounded-b-lg">
-              Secured by Miix Studio
+            <div className="py-3 px-6 text-[10px] text-center text-miix-milk/15 bg-miix-cream border-t border-miix-cyan/5 miix-font-mono uppercase tracking-wider rounded-b-lg">
+              Secured by Miix Analog Digital
             </div>
           </Card>
         </div>
