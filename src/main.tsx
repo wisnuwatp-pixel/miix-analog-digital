@@ -2,9 +2,9 @@ import { Toaster } from "@/components/ui/sonner";
 import { RequireAuth } from "@/components/RequireAuth";
 import { ConvexAuthProvider } from "@convex-dev/auth/react";
 import { ConvexReactClient } from "convex/react";
-import React, { StrictMode, useEffect, lazy, Suspense } from "react";
+import React, { StrictMode, lazy, Suspense } from "react";
 import { createRoot } from "react-dom/client";
-import { BrowserRouter, Route, Routes, useLocation } from "react-router";
+import { BrowserRouter, Route, Routes } from "react-router";
 import "./index.css";
 
 // Lazy load route components for better code splitting
@@ -36,14 +36,14 @@ class RootErrorBoundary extends React.Component<
     };
   }
   componentDidCatch(err: Error) {
-    console.error("[WebContainer preview] Root crash:", err);
+    console.error("[RootErrorBoundary] crash:", err);
   }
   render() {
     if (this.state.hasError) {
       return (
         <div className="min-h-screen flex items-center justify-center bg-background text-foreground p-6">
           <div className="max-w-lg text-center">
-            <p className="text-sm font-semibold">Preview runtime error</p>
+            <p className="text-sm font-semibold">Runtime error</p>
             <p className="mt-2 text-xs text-muted-foreground break-words">
               {this.state.message}
             </p>
@@ -60,12 +60,18 @@ class RootErrorBoundary extends React.Component<
   }
 }
 
-const convexUrl = import.meta.env.VITE_CONVEX_URL as string;
-const convex = convexUrl ? new ConvexReactClient(convexUrl) : null;
+// ── Convex (optional) ──────────────────────────────────────────────
+// On GitHub Pages / static hosts VITE_CONVEX_URL is not set, so convex
+// stays null and we render only the public landing + 404 page.
+let convex: ConvexReactClient | null = null;
+try {
+  const url = import.meta.env.VITE_CONVEX_URL as string | undefined;
+  if (url) convex = new ConvexReactClient(url);
+} catch {
+  /* no backend available — render static shell */
+}
 
-
-
-
+// ── Render ─────────────────────────────────────────────────────────
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <RootErrorBoundary>
