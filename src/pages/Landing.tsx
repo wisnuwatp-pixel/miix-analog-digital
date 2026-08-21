@@ -33,7 +33,7 @@ import {
   HappyMacIcon,
   WindowsFlagIcon,
 } from "@/components/Y2KIcons";
-import { useNavigate } from "react-router";
+
 
 const fadeUp = {
   initial: { opacity: 0, y: 24 },
@@ -133,7 +133,6 @@ const fontSizes: { key: FontSize; label: string }[] = [
 ];
 
 export default function Landing() {
-  const navigate = useNavigate();
   const [fontSize, setFontSize] = useState<FontSize>("md");
 
   return (
@@ -184,12 +183,12 @@ export default function Landing() {
                 </button>
               ))}
             </div>
-            <button
-              onClick={() => navigate("/auth")}
+            <a
+              href="#about"
               className="rounded-md border border-miix-cyan/30 bg-miix-cyan/10 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-miix-cyan transition-all hover:bg-miix-cyan hover:text-miix-cream hover:border-miix-cyan"
             >
-              Enter System →
-            </button>
+              About Me
+            </a>
           </div>
         </div>
       </nav>
@@ -249,13 +248,13 @@ export default function Landing() {
             transition={{ delay: 0.7, duration: 0.5 }}
             className="mt-12 flex flex-wrap gap-4"
           >
-            <button
-              onClick={() => navigate("/auth?returnTo=/dashboard")}
+            <a
+              href="#about"
               className="group flex items-center gap-3 rounded-md border border-miix-cyan/40 bg-miix-cyan/10 px-8 py-4 text-sm font-bold uppercase tracking-wider text-miix-cyan transition-all hover:bg-miix-cyan hover:text-miix-cream hover:shadow-[0_0_30px_#00dbc230]"
             >
-              Enter the System
+              About Me
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </button>
+            </a>
             <a
               href="#platform"
               className="flex items-center gap-3 rounded-md border border-miix-milk/10 bg-miix-milk/5 px-8 py-4 text-sm font-bold uppercase tracking-wider text-miix-milk/60 transition-all hover:bg-miix-milk/10 hover:text-miix-milk hover:border-miix-milk/20"
@@ -933,7 +932,7 @@ const BrandMIX = {
       </section>
 
       {/* ─── ABOUT ME ─── */}
-      <section className="border-b border-miix-cyan/5 miix-grad-cyan-dark text-miix-milk relative overflow-hidden">
+      <section id="about" className="border-b border-miix-cyan/5 miix-grad-cyan-dark text-miix-milk relative overflow-hidden">
         {/* Decorative glows */}
         <div className="pointer-events-none absolute -bottom-20 -right-20 h-80 w-80 rounded-full bg-miix-cyan/8 blur-[120px]" />
         <div className="pointer-events-none absolute -top-20 -left-20 h-60 w-60 rounded-full bg-miix-honey/5 blur-[100px]" />
@@ -965,13 +964,13 @@ const BrandMIX = {
                 // Status: Building  &bull;  Mode: Analog × Digital  &bull;  Location: Thailand
               </p>
             </div>
-            <button
-              onClick={() => navigate("/auth?returnTo=/dashboard")}
+            <a
+              href="/miix-analog-digital/"
               className="group inline-flex items-center gap-3 rounded-md border border-miix-cyan/40 bg-miix-cyan/10 px-10 py-5 text-sm font-bold uppercase tracking-wider text-miix-cyan backdrop-blur-sm transition-all hover:bg-miix-cyan hover:text-miix-cream hover:border-miix-cyan hover:shadow-[0_0_40px_#00dbc230]"
             >
-              Enter the System
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </button>
+              Back to Top
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:-translate-y-1" />
+            </a>
           </motion.div>
         </div>
       </section>
